@@ -25,7 +25,7 @@
         }
     </script>
     <style>
-        /* Estilos de Impressão e Exportação Restrita */
+        /* Estilos de Impressão e Exportação Restrita aos Diagnósticos + Insights */
         @media print {
             body {
                 background-color: #ffffff !important;
@@ -35,7 +35,6 @@
             header, nav, footer, .no-print, .step-section {
                 display: none !important;
             }
-            /* Apenas a seção de resumo é impressa */
             #resumo {
                 display: block !important;
                 width: 100% !important;
@@ -60,12 +59,12 @@
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CONFIGURAÇÃO DOS VÍDEOS DAS SOLUÇÕES (INSIRA SEUS IDS DO YOUTUBE AQUI) -->
+    <!-- CONFIGURAÇÃO DOS VÍDEOS (LIFECROWTH E LIFECHAT MUTE) -->
     <script>
         const VIDEOS_YOUTUBE = {
-            ecommerce: "dQw4w9WgXcQ", // ID Vídeo Commerce
-            lifegrowth: "dQw4w9WgXcQ", // ID Vídeo LifeGrowth
-            lifechat: "dQw4w9WgXcQ"   // ID Vídeo LifeChat
+            ecommerce: "dQw4w9WgXcQ", // ID Vídeo Commerce (Padrão)
+            lifegrowth: "bZS1asIoyPQ", // ID Vídeo LifeGrowth
+            lifechat: "9iRiFMiwEE4"     // ID Vídeo LifeChat
         };
     </script>
 
@@ -215,7 +214,7 @@
                 <div class="grid md:grid-cols-2 gap-0">
                     <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
-                            <iframe id="iframe-ecom" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="iframe-ecom" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -342,7 +341,7 @@
             </div>
         </section>
 
-        <!-- 5. SHOWCASE LIFEGROWTH -->
+        <!-- 5. SHOWCASE LIFEGROWTH (VÍDEO MUTE) -->
         <section id="show-lifegrowth" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
@@ -355,7 +354,7 @@
                 <div class="grid md:grid-cols-2 gap-0">
                     <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
-                            <iframe id="iframe-tele" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="iframe-tele" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -486,7 +485,7 @@
             </div>
         </section>
 
-        <!-- 7. SHOWCASE LIFECHAT -->
+        <!-- 7. SHOWCASE LIFECHAT (VÍDEO MUTE) -->
         <section id="show-lifechat" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
@@ -499,7 +498,7 @@
                 <div class="grid md:grid-cols-2 gap-0">
                     <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
-                            <iframe id="iframe-chat" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="iframe-chat" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -562,7 +561,7 @@
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">2. Diagnóstico Televendas Ativo (LifeGrowth)</h3>
                         <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs mb-4"></div>
                         <div id="insight-tele" class="p-3 bg-brand-card rounded-xl border border-slate-700/50 text-xs text-brand-textMuted print-card">
-                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span id="insight-tele-texto">A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção sistematizada no televendas.</span>
+                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span id="insight-tele-texto">A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção systematizada no televendas.</span>
                         </div>
                     </div>
 
@@ -584,7 +583,7 @@
         LifeApps Soluções Digitais — www.lifeapps.com.br
     </footer>
 
-    <!-- LOGICA JAVASCRIPT DA APLICAÇÃO -->
+    <!-- LÓGICA JAVASCRIPT DA APLICAÇÃO -->
     <script>
         // NAVEGAÇÃO ENTRE ETAPAS
         function navigate(stepId) {
@@ -624,16 +623,18 @@
             navigate(nextStep);
         }
 
-        // CARREGAR VÍDEOS DO YOUTUBE
+        // CARREGAR VÍDEOS DO YOUTUBE (LIFEGROWTH E LIFECHAT MUTE)
         function carregarVideos() {
             if(VIDEOS_YOUTUBE.ecommerce) {
                 document.getElementById('iframe-ecom').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.ecommerce}?rel=0`;
             }
             if(VIDEOS_YOUTUBE.lifegrowth) {
-                document.getElementById('iframe-tele').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.lifegrowth}?rel=0`;
+                // mute=1 garante que o vídeo seja executado sem som
+                document.getElementById('iframe-tele').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.lifegrowth}?autoplay=1&mute=1&loop=1&playlist=${VIDEOS_YOUTUBE.lifegrowth}&rel=0`;
             }
             if(VIDEOS_YOUTUBE.lifechat) {
-                document.getElementById('iframe-chat').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.lifechat}?rel=0`;
+                // mute=1 garante que o vídeo seja executado sem som
+                document.getElementById('iframe-chat').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.lifechat}?autoplay=1&mute=1&loop=1&playlist=${VIDEOS_YOUTUBE.lifechat}&rel=0`;
             }
         }
 
