@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeApps - Apresentação Comercial Interativa</title>
+    <title>Apresentação Comercial Interativa - LifeApps</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,453 +12,428 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0D2538',
-                            navy: '#1A365D',
-                            blue: '#2B6CB0',
-                            green: '#00E676',
-                            greenHover: '#00C853'
+                            dark: '#0B132B',
+                            card: '#1C2541',
+                            accent: '#00E676',
+                            accentHover: '#00C853',
+                            blue: '#3A86FF',
+                            textMuted: '#94A3B8'
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Estilos específicos para impressão / exportação PDF */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            header, nav, .no-print {
+                display: none !important;
+            }
+            .step-section {
+                display: block !important;
+                page-break-after: always;
+                margin-bottom: 2rem;
+            }
+            .print-card {
+                background-color: #ffffff !important;
+                border: 1px solid #cbd5e1 !important;
+                color: #000000 !important;
+                box-shadow: none !important;
+            }
+            .text-white, .text-slate-200, .text-slate-300 {
+                color: #0f172a !important;
+            }
+            .text-brand-accent {
+                color: #059669 !important;
+            }
+            .iframe-container {
+                display: none !important; /* Oculta vídeo interativo no PDF impresso */
+            }
+            .print-media-placeholder {
+                display: block !important;
+                border: 2px dashed #94a3b8;
+                padding: 1rem;
+                text-align: center;
+                font-weight: bold;
+                color: #475569;
+            }
+        }
+        .print-media-placeholder { display: none; }
+    </style>
 </head>
-<body class="bg-slate-100 font-sans text-slate-800 min-h-screen flex flex-col">
+<body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
-    <header class="bg-brand-dark text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <span class="text-2xl font-black text-brand-green tracking-wider">LifeApps</span>
-                <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded-full uppercase">Apresentação Comercial</span>
-            </div>
-            
-            <nav class="hidden md:flex space-x-2 text-sm font-medium">
-                <button onclick="navigate('institucional')" class="nav-btn px-3 py-1.5 rounded-md hover:bg-slate-800 transition">1. Quem Somos</button>
-                <button onclick="navigate('diag-ecommerce')" class="nav-btn px-3 py-1.5 rounded-md hover:bg-slate-800 transition">2. Diag. Ecommerce</button>
-                <button onclick="navigate('show-ecommerce')" class="nav-btn px-3 py-1.5 rounded-md hover:bg-slate-800 transition">3. Solução Ecommerce</button>
-                <button onclick="navigate('diag-televendas')" class="nav-btn px-3 py-1.5 rounded-md hover:bg-slate-800 transition">4. Diag. Televendas</button>
-                <button onclick="navigate('show-televendas')" class="nav-btn px-3 py-1.5 rounded-md hover:bg-slate-800 transition">5. LifeGrowth</button>
-                <button onclick="navigate('resumo')" class="nav-btn px-3 py-1.5 rounded-md hover:bg-slate-800 transition">6. Resumo Final</button>
-            </nav>
+    <!-- CONFIGURAÇÃO RÁPIDA DOS VÍDEOS (INSIRA SEUS IDS DO YOUTUBE AQUI) -->
+    <script>
+        const VIDEOS_YOUTUBE = {
+            ecommerce: "dQw4w9WgXcQ", // Insira o ID do vídeo do E-commerce aqui
+            televendas: "dQw4w9WgXcQ"  // Insira o ID do vídeo do LifeGrowth aqui
+        };
+    </script>
 
-            <button onclick="toggleAdminModal()" class="bg-slate-800 hover:bg-slate-700 text-brand-green border border-brand-green/30 px-3 py-1.5 rounded-md text-xs font-bold transition flex items-center space-x-1">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
-                <span>Painel Admin</span>
-            </button>
+    <!-- CABEÇALHO CENTRALIZADO DA APRESENTAÇÃO -->
+    <header class="w-full max-w-5xl px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 no-print">
+        <div class="flex items-center space-x-3">
+            <span class="text-3xl font-black text-brand-accent tracking-tight">LifeApps</span>
+            <span class="text-xs bg-brand-card text-brand-textMuted px-3 py-1 rounded-full border border-slate-700 uppercase font-semibold">Apresentação Comercial</span>
         </div>
+        
+        <!-- NAVEGAÇÃO POR ETAPAS -->
+        <nav class="flex flex-wrap justify-center gap-1 bg-brand-card p-1.5 rounded-xl border border-slate-700/60 shadow-lg text-xs font-semibold">
+            <button onclick="navigate('institucional')" class="nav-btn px-3 py-1.5 rounded-lg hover:text-brand-accent transition">1. Quem Somos</button>
+            <button onclick="navigate('diag-ecommerce')" class="nav-btn px-3 py-1.5 rounded-lg hover:text-brand-accent transition">2. Diag. Ecommerce</button>
+            <button onclick="navigate('show-ecommerce')" class="nav-btn px-3 py-1.5 rounded-lg hover:text-brand-accent transition">3. Solução Ecommerce</button>
+            <button onclick="navigate('diag-televendas')" class="nav-btn px-3 py-1.5 rounded-lg hover:text-brand-accent transition">4. Diag. Televendas</button>
+            <button onclick="navigate('show-televendas')" class="nav-btn px-3 py-1.5 rounded-lg hover:text-brand-accent transition">5. LifeGrowth</button>
+            <button onclick="navigate('resumo')" class="nav-btn px-3 py-1.5 rounded-lg hover:text-brand-accent transition">6. Resumo Final</button>
+        </nav>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL DAS ETAPAS -->
-    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6">
+    <!-- CONTAINER CENTRALIZADO DO CONTEÚDO PRINCIPAL -->
+    <main class="w-full max-w-4xl px-4 my-auto py-4">
 
-        <!-- 1. ETAPA INSTITUCIONAL -->
+        <!-- 1. QUEM É A LIFEAPPS -->
         <section id="institucional" class="step-section">
-            <div class="bg-gradient-to-r from-brand-dark to-brand-navy rounded-2xl text-white p-8 md:p-12 shadow-xl mb-6">
-                <div class="max-w-3xl">
-                    <span class="text-brand-green font-bold uppercase tracking-wider text-sm">Apresentação Comercial</span>
-                    <h1 class="text-4xl md:text-5xl font-black mt-2 leading-tight">Acelere as vendas B2B da sua empresa com a LifeApps</h1>
-                    <p class="text-slate-300 text-lg mt-4 leading-relaxed">
-                        Conectamos a força de vendas do atacado e distribuição a ecossistemas inteligentes de vendas online e televendas de alta performance.
-                    </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <button onclick="navigate('diag-ecommerce')" class="bg-brand-green hover:bg-brand-greenHover text-slate-900 font-bold px-6 py-3 rounded-lg shadow-lg transition transform hover:-translate-y-0.5">
-                            Iniciar Diagnóstico Comercial &rarr;
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-brand-blue font-bold text-3xl mb-2">24/7</div>
-                    <h3 class="font-bold text-lg mb-1">Vendas Ininterruptas</h3>
-                    <p class="text-slate-600 text-sm">Seu cliente realizando reposições no momento em que precisar, de forma autônoma.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-brand-blue font-bold text-3xl mb-2">LifeGrowth</div>
-                    <h3 class="font-bold text-lg mb-1">Televendas Ativo com IA</h3>
-                    <p class="text-slate-600 text-sm">Inteligência comercial que indica os clientes certos para reativação e upsell.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-brand-blue font-bold text-3xl mb-2">100% ERP</div>
-                    <h3 class="font-bold text-lg mb-1">Integrado ao seu ERP</h3>
-                    <p class="text-slate-600 text-sm">Sincronização nativa de regras de negócio, tabelas de preços e estoque em tempo real.</p>
-                </div>
+            <div class="bg-brand-card rounded-3xl p-8 md:p-12 border border-slate-700/50 shadow-2xl text-center flex flex-col items-center">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-xs mb-2">Apresentação Comercial</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-white max-w-2xl">
+                    Transforme a Operação Comercial da sua Empresa
+                </h1>
+                <p class="text-brand-textMuted text-base md:text-lg mt-4 max-w-xl leading-relaxed">
+                    Soluções especialistas para atacados e distribuidoras acelerarem suas vendas B2B com E-commerce 24/7 e Televendas Ativo impulsionado por IA.
+                </p>
+                <button onclick="navigate('diag-ecommerce')" class="mt-8 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-black px-8 py-4 rounded-2xl shadow-xl shadow-brand-accent/10 transition transform hover:-translate-y-1">
+                    Iniciar Diagnóstico Comercial &rarr;
+                </button>
             </div>
         </section>
 
-        <!-- 2. ETAPA DIAGNÓSTICO ECOMMERCE -->
+        <!-- 2. DIAGNÓSTICO ECOMMERCE -->
         <section id="diag-ecommerce" class="step-section hidden">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-                <div class="border-b border-slate-200 pb-4 mb-6">
-                    <span class="bg-blue-100 text-brand-blue font-bold text-xs px-2.5 py-1 rounded">Etapa 1 de 2</span>
-                    <h2 class="text-2xl font-bold text-brand-navy mt-2">Diagnóstico: Canal de Vendas Ecommerce B2B</h2>
-                    <p class="text-slate-500 text-sm">Responda às questões abaixo com o cliente para mapear as dores do canal digital.</p>
+            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl print-card">
+                <div class="border-b border-slate-700 pb-4 mb-6">
+                    <span class="text-brand-blue font-bold text-xs uppercase tracking-wider">Etapa 1 de 2</span>
+                    <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico: Ecommerce B2B (Canal 24/7)</h2>
                 </div>
 
-                <form id="form-ecommerce" class="grid md:grid-cols-2 gap-6">
+                <form id="form-ecommerce" class="grid md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm font-semibold mb-2">1. O cliente possui e-commerce B2B atualmente?</label>
-                        <select name="ecom_possui" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Não">Não</option>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">1. O cliente possui e-commerce?</label>
+                        <select name="ecom_possui" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione uma opção...</option>
                             <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">2. Qual a quantidade de RCAs / Vendedores externos?</label>
-                        <input type="number" name="ecom_rcas" placeholder="Ex: 25" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">2. Quantidade de RCAs / Vendedores?</label>
+                        <input type="number" name="ecom_rcas" placeholder="Digite a quantidade..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">3. Existe catálogo físico ou digital para o mix?</label>
-                        <select name="ecom_catalogo" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">3. Formato do catálogo de produtos?</label>
+                        <select name="ecom_catalogo" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione o formato...</option>
                             <option value="Catálogo Físico em Papel">Catálogo Físico em Papel</option>
                             <option value="PDF Estático via WhatsApp">PDF Estático via WhatsApp</option>
-                            <option value="Portal Digital Interativo">Portal Digital Interativo</option>
+                            <option value="Catálogo Digital Interativo">Catálogo Digital Interativo</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">4. Mesmo atendido pelo RCA, o cliente procura a empresa para reposições?</label>
-                        <select name="ecom_procura_reposicao" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Sim">Sim (Muitas compras fora do horário do vendedor)</option>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">4. Cliente busca reposições fora do atendimento do vendedor?</label>
+                        <select name="ecom_reposicao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim (Muitos pedidos à noite/finais de semana)</option>
                             <option value="Não">Não</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">5. Qual é o canal secundário principal?</label>
-                        <select name="ecom_canal_secundario" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Televendas por WhatsApp">Televendas por WhatsApp</option>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">5. Qual é o canal secundário de atendimento?</label>
+                        <select name="ecom_canal_secundario" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione o canal...</option>
                             <option value="Televendas por Telefone">Televendas por Telefone</option>
+                            <option value="Televendas por WhatsApp">Televendas por WhatsApp</option>
                             <option value="Televendas por E-mail">Televendas por E-mail</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">6. Antes de realizar o pedido, o cliente exige orçamento?</label>
-                        <select name="ecom_orcamento" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Sim">Sim (Aguardam validação manual)</option>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">6. Cliente exige orçamento prévio antes de fechar pedido?</label>
+                        <select name="ecom_orcamento" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">7. O cliente tem acesso fácil e online a boletos, faturas e histórico?</label>
-                        <select name="ecom_autosservico" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Não">Não (Solicita ao suporte/financeiro)</option>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">7. Acesso fácil e online ao histórico, boletos e faturas?</label>
+                        <select name="ecom_autosservico" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
+                            <option value="Não">Não (Gera sobrecarga no atendimento)</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">8. Por qual canal principal consultam esses documentos?</label>
-                        <input type="text" name="ecom_canal_consulta" placeholder="Ex: WhatsApp, telefone, e-mail" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">8. Por qual canal consultam histórico/boletos?</label>
+                        <input type="text" name="ecom_canal_consulta" placeholder="Ex: WhatsApp, telefone, e-mail..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">9. Quantos colaboradores usam WhatsApp corporativo?</label>
-                        <input type="number" name="ecom_num_whatsapp" placeholder="Ex: 10" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">9. N° de colaboradores usando WhatsApp corporativo?</label>
+                        <input type="number" name="ecom_whatsapp_num" placeholder="Digite a quantidade..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">10. Qual o principal gargalo da operação comercial hoje?</label>
-                        <input type="text" name="ecom_gargalo" placeholder="Ex: Demora para enviar orçamentos e perda de pedidos à noite" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">10. Gargalo principal da operação comercial atual?</label>
+                        <input type="text" name="ecom_gargalo" placeholder="Descreva o gargalo principal..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
-                    <div class="md:col-span-2 flex justify-end mt-4">
-                        <button type="button" onclick="salvarEDevancerEcom()" class="bg-brand-navy hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-lg shadow transition">
-                            Concluir Diagnóstico e Ver Solução Ecommerce &rarr;
+                    <div class="md:col-span-2 flex justify-end mt-4 no-print">
+                        <button type="button" onclick="salvarEAvancar('form-ecommerce', 'show-ecommerce')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition">
+                            Apresentar Solução Ecommerce &rarr;
                         </button>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- 3. ETAPA SHOWCASE ECOMMERCE (SPLIT SCREEN) -->
+        <!-- 3. APRESENTAÇÃO ECOMMERCE (SPLIT SCREEN) -->
         <section id="show-ecommerce" class="step-section hidden">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="bg-brand-dark text-white p-4 px-6 flex justify-between items-center">
+            <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden print-card">
+                <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
                     <div>
-                        <span class="text-brand-green text-xs font-bold uppercase">Solução Apresentada</span>
-                        <h2 class="text-xl font-bold">Ecommerce B2B - Canal de Vendas 24/7</h2>
+                        <span class="text-brand-accent text-xs font-bold uppercase">Solução LifeApps</span>
+                        <h2 class="text-2xl font-bold text-white">Ecommerce - Canal de Vendas 24/7</h2>
                     </div>
-                    <button onclick="navigate('diag-televendas')" class="bg-brand-green text-slate-900 font-bold text-xs px-4 py-2 rounded shadow hover:bg-brand-greenHover">
-                        Ir para Diagnóstico Televendas &rarr;
-                    </button>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-0 min-h-[500px]">
-                    <!-- LADO ESQUERDO: VÍDEO / MIDIA -->
-                    <div class="bg-slate-900 p-6 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-slate-800">
-                        <div id="container-midia-ecom" class="w-full aspect-video rounded-lg overflow-hidden bg-slate-800 shadow-inner flex items-center justify-center">
-                            <!-- Injetado Dinamicamente -->
+                <div class="grid md:grid-cols-2 gap-0">
+                    <!-- ESQUERDA: VÍDEO -->
+                    <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg iframe-container">
+                            <iframe id="iframe-ecom" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <p class="text-slate-400 text-xs mt-3 text-center">Demonstração visual do Portal & App Ecommerce B2B</p>
+                        <div class="print-media-placeholder">Vídeo Demonstrativo do E-commerce 24/7 Apresentado</div>
                     </div>
 
-                    <!-- LADO DIREITO: DORES E RECURSOS QUE RESOLVEMOS -->
-                    <div class="p-6 md:p-8 bg-slate-50 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-lg font-bold text-brand-navy mb-4 border-b border-slate-200 pb-2">Como a LifeApps Resolve as Dores Mapeadas</h3>
-                            
-                            <div class="space-y-4" id="lista-dores-ecom">
-                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start space-x-3">
-                                    <span class="bg-red-100 text-red-600 p-1.5 rounded-lg text-xs font-bold mt-0.5">DOR</span>
-                                    <div>
-                                        <h4 class="font-bold text-sm text-slate-800">Perda de vendas fora do horário do RCA</h4>
-                                        <p class="text-xs text-slate-600 mt-1"><strong>Recurso LifeApps:</strong> Canal 24/7 com regras personalizadas por cliente para autosserviço imediato.</p>
-                                    </div>
-                                </div>
+                    <!-- DIREITA: DORES X RECURSOS -->
+                    <div class="p-6 flex flex-col justify-between space-y-4">
+                        <h3 class="font-bold text-lg text-white">Dores Identificadas vs Solução</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60 print-card">
+                                <span class="text-red-400 font-bold text-xs uppercase">Dor</span>
+                                <h4 class="text-sm font-bold text-white mt-0.5">Demanda represada fora do horário comercial</h4>
+                                <p class="text-xs text-brand-textMuted mt-1"><strong>Recurso LifeApps:</strong> Portal e App 24/7 que permite reposição contínua com tabelas de preço e estoque em tempo real.</p>
+                            </div>
 
-                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start space-x-3">
-                                    <span class="bg-red-100 text-red-600 p-1.5 rounded-lg text-xs font-bold mt-0.5">DOR</span>
-                                    <div>
-                                        <h4 class="font-bold text-sm text-slate-800">Lentidão na emissão de orçamentos e 2ª via de faturas</h4>
-                                        <p class="text-xs text-slate-600 mt-1"><strong>Recurso LifeApps:</strong> Central do Cliente completa com consulta automática de boletos, faturas e repetição rápida de pedidos.</p>
-                                    </div>
-                                </div>
+                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60 print-card">
+                                <span class="text-red-400 font-bold text-xs uppercase">Dor</span>
+                                <h4 class="text-sm font-bold text-white mt-0.5">Sobrecarga de atendentes para envio de boletos e orçamentos</h4>
+                                <p class="text-xs text-brand-textMuted mt-1"><strong>Recurso LifeApps:</strong> Central de Autosserviço onde o próprio cliente baixa faturas, boletos e realiza cotações autônomas.</p>
                             </div>
                         </div>
 
-                        <div class="mt-6 pt-4 border-t border-slate-200 flex justify-between items-center">
-                            <span class="text-xs text-slate-500">Mídia configurada via Painel Admin</span>
-                            <button onclick="navigate('diag-televendas')" class="text-brand-blue font-bold text-sm hover:underline">Próximo Módulo: Televendas &rarr;</button>
+                        <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
+                            <button onclick="navigate('diag-televendas')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition">
+                                Ir para Diagnóstico Televendas &rarr;
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. ETAPA DIAGNÓSTICO TELEVENDAS -->
+        <!-- 4. DIAGNÓSTICO TELEVENDAS -->
         <section id="diag-televendas" class="step-section hidden">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-                <div class="border-b border-slate-200 pb-4 mb-6">
-                    <span class="bg-green-100 text-green-800 font-bold text-xs px-2.5 py-1 rounded">Etapa 2 de 2</span>
-                    <h2 class="text-2xl font-bold text-brand-navy mt-2">Diagnóstico: Televendas Estratégico (LifeGrowth)</h2>
-                    <p class="text-slate-500 text-sm">Mapeamento da operação do time interno de televendas e uso de inteligência comercial.</p>
+            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl print-card">
+                <div class="border-b border-slate-700 pb-4 mb-6">
+                    <span class="text-brand-accent font-bold text-xs uppercase tracking-wider">Etapa 2 de 2</span>
+                    <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico: Televendas (LifeGrowth)</h2>
                 </div>
 
-                <form id="form-televendas" class="grid md:grid-cols-2 gap-6">
+                <form id="form-televendas" class="grid md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm font-semibold mb-2">1. Qual o tamanho do time de televendas?</label>
-                        <input type="number" name="tele_tamanho" placeholder="Ex: 12 operadores" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">1. Tamanho do time de televendas?</label>
+                        <input type="number" name="tele_tamanho" placeholder="N° de operadores..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">2. Qual a plataforma usada para emissão de pedidos e orçamentos?</label>
-                        <input type="text" name="tele_plataforma" placeholder="Ex: Módulo nativo do ERP / Sistema próprio" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">2. Plataforma usada para emissão de pedidos?</label>
+                        <input type="text" name="tele_plataforma" placeholder="Plataforma atual..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">3. Por onde chegam esses pedidos?</label>
-                        <input type="text" name="tele_origem_pedidos" placeholder="Ex: Telefone, WhatsApp, e-mail" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">3. Por onde chegam os pedidos?</label>
+                        <input type="text" name="tele_origem" placeholder="Ex: WhatsApp, telefone, e-mail..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">4. Existe integração dessa plataforma com o seu ERP?</label>
-                        <select name="tele_integracao" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">4. Existe integração dessa plataforma com o seu ERP?</label>
+                        <select name="tele_integracao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
-                            <option value="Não">Não (Digitação manual)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">5. O vendedor realiza atividades de prospecção e recuperação de clientes?</label>
-                        <select name="tele_prospeccao" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Não">Não (Atendimento apenas reativo)</option>
-                            <option value="Sim">Sim</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">6. Qual ou quais relatórios eles acompanham as vendas?</label>
-                        <input type="text" name="tele_relatorios" placeholder="Ex: Relatório mensal em Excel" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">7. Existe relatório com curva RFM (Recência, Frequência e Valor)?</label>
-                        <select name="tele_rfm" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
                             <option value="Não">Não</option>
-                            <option value="Sim">Sim</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">8. A plataforma possui gerenciamento estilo CRM com tarefas?</label>
-                        <select name="tele_crm" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">5. Vendedor faz prospecção e recuperação de vendas?</label>
+                        <select name="tele_prospeccao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não (Apenas reativo)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">6. Quais relatórios acompanham as vendas?</label>
+                        <input type="text" name="tele_relatorios" placeholder="Relatórios utilizados..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">7. Existe relatório com curva RFM (Recência, Frequência e Valor)?</label>
+                        <select name="tele_rfm" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
-                            <option value="Sim">Sim</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-2">9. O supervisor acompanha metas e atividades executadas em tempo real?</label>
-                        <select name="tele_supervisao" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
-                            <option value="Não">Não (Apenas no final do mês)</option>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">8. A plataforma possui gerenciamento estilo CRM?</label>
+                        <select name="tele_crm" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">10. Existe inteligência artificial embarcada nessa plataforma?</label>
-                        <select name="tele_ia" class="w-full border border-slate-300 rounded-lg p-2.5 bg-slate-50">
                             <option value="Não">Não</option>
-                            <option value="Sim">Sim</option>
                         </select>
                     </div>
 
-                    <div class="md:col-span-2 flex justify-end mt-4">
-                        <button type="button" onclick="salvarEDevancerTele()" class="bg-brand-navy hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-lg shadow transition">
-                            Concluir Diagnóstico e Ver LifeGrowth &rarr;
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">9. Supervisor acompanha metas/atividades em tempo real?</label>
+                        <select name="tele_supervisao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-textMuted mb-2">10. Existe inteligência artificial embarcada na plataforma?</label>
+                        <select name="tele_ia" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2 flex justify-end mt-4 no-print">
+                        <button type="button" onclick="salvarEAvancar('form-televendas', 'show-televendas')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition">
+                            Apresentar Solução LifeGrowth &rarr;
                         </button>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- 5. ETAPA SHOWCASE TELEVENDAS (SPLIT SCREEN) -->
+        <!-- 5. APRESENTAÇÃO TELEVENDAS (LIFEGROWTH) -->
         <section id="show-televendas" class="step-section hidden">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="bg-brand-dark text-white p-4 px-6 flex justify-between items-center">
+            <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden print-card">
+                <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
                     <div>
-                        <span class="text-brand-green text-xs font-bold uppercase">Solução Apresentada</span>
-                        <h2 class="text-xl font-bold">Televendas Inteligente - LifeGrowth</h2>
+                        <span class="text-brand-accent text-xs font-bold uppercase">Solução LifeApps</span>
+                        <h2 class="text-2xl font-bold text-white">Televendas Inteligente - LifeGrowth</h2>
                     </div>
-                    <button onclick="navigate('resumo')" class="bg-brand-green text-slate-900 font-bold text-xs px-4 py-2 rounded shadow hover:bg-brand-greenHover">
-                        Ver Resumo do Diagnóstico &rarr;
-                    </button>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-0 min-h-[500px]">
-                    <!-- LADO ESQUERDO: VÍDEO / MIDIA -->
-                    <div class="bg-slate-900 p-6 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-slate-800">
-                        <div id="container-midia-tele" class="w-full aspect-video rounded-lg overflow-hidden bg-slate-800 shadow-inner flex items-center justify-center">
-                            <!-- Injetado Dinamicamente -->
+                <div class="grid md:grid-cols-2 gap-0">
+                    <!-- ESQUERDA: VÍDEO -->
+                    <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg iframe-container">
+                            <iframe id="iframe-tele" class="w-full h-full" src="" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <p class="text-slate-400 text-xs mt-3 text-center">Demonstração do Painel de Inteligência LifeGrowth</p>
+                        <div class="print-media-placeholder">Vídeo Demonstrativo do LifeGrowth Apresentado</div>
                     </div>
 
-                    <!-- LADO DIREITO: DORES E RECURSOS QUE RESOLVEMOS -->
-                    <div class="p-6 md:p-8 bg-slate-50 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-lg font-bold text-brand-navy mb-4 border-b border-slate-200 pb-2">Como o LifeGrowth Eleva o Nível do Televendas</h3>
-                            
-                            <div class="space-y-4" id="lista-dores-tele">
-                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start space-x-3">
-                                    <span class="bg-red-100 text-red-600 p-1.5 rounded-lg text-xs font-bold mt-0.5">DOR</span>
-                                    <div>
-                                        <h4 class="font-bold text-sm text-slate-800">Televendas reativo que apenas "anota pedidos"</h4>
-                                        <p class="text-xs text-slate-600 mt-1"><strong>Recurso LifeGrowth:</strong> Carteira dinâmica de contatos gerada por IA, priorizando clientes com risco de inatividade (churn).</p>
-                                    </div>
-                                </div>
+                    <!-- DIREITA: DORES X RECURSOS -->
+                    <div class="p-6 flex flex-col justify-between space-y-4">
+                        <h3 class="font-bold text-lg text-white">Dores Identificadas vs Solução</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60 print-card">
+                                <span class="text-red-400 font-bold text-xs uppercase">Dor</span>
+                                <h4 class="text-sm font-bold text-white mt-0.5">Operação de Televendas puramente reativa e passiva</h4>
+                                <p class="text-xs text-brand-textMuted mt-1"><strong>Recurso LifeGrowth:</strong> Matriz RFM automatizada e algoritmo de IA indicando diariamente quais clientes contatar antes do churn.</p>
+                            </div>
 
-                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start space-x-3">
-                                    <span class="bg-red-100 text-red-600 p-1.5 rounded-lg text-xs font-bold mt-0.5">DOR</span>
-                                    <div>
-                                        <h4 class="font-bold text-sm text-slate-800">Falta de visão da matriz RFM e metas em tempo real</h4>
-                                        <p class="text-xs text-slate-600 mt-1"><strong>Recurso LifeGrowth:</strong> Gestão visual estilo CRM com recomendações automáticas de mix complementar para o operador.</p>
-                                    </div>
-                                </div>
+                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60 print-card">
+                                <span class="text-red-400 font-bold text-xs uppercase">Dor</span>
+                                <h4 class="text-sm font-bold text-white mt-0.5">Falta de visão de metas e baixa taxa de conversão</h4>
+                                <p class="text-xs text-brand-textMuted mt-1"><strong>Recurso LifeGrowth:</strong> CRM integrado ao televendas com sugestões inteligentes de mix complementar para aumento de ticket médio.</p>
                             </div>
                         </div>
 
-                        <div class="mt-6 pt-4 border-t border-slate-200 flex justify-between items-center">
-                            <span class="text-xs text-slate-500">Mídia configurada via Painel Admin</span>
-                            <button onclick="navigate('resumo')" class="text-brand-blue font-bold text-sm hover:underline">Ir para Resumo Final &rarr;</button>
+                        <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
+                            <button onclick="navigate('resumo')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition">
+                                Ver Resumo e Concluir &rarr;
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. ETAPA RESUMO FINAL (Geração do Diagnóstico) -->
+        <!-- 6. RESUMO FINAL & EXPORTAÇÃO PDF -->
         <section id="resumo" class="step-section hidden">
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-4 mb-6">
+            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl print-card">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-700 pb-4 mb-6">
                     <div>
-                        <span class="bg-green-100 text-green-800 font-bold text-xs px-2.5 py-1 rounded">Resultado da Reunião</span>
-                        <h2 class="text-2xl font-bold text-brand-navy mt-1">Resumo do Diagnóstico Comercial</h2>
+                        <span class="text-brand-accent font-bold text-xs uppercase">Relatório Final</span>
+                        <h2 class="text-2xl font-bold text-white mt-1">Resumo da Apresentação & Diagnóstico</h2>
                     </div>
-                    <button onclick="window.print()" class="mt-3 md:mt-0 bg-brand-navy hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-lg text-sm transition flex items-center space-x-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 000-4H9a2 2 0 000 4zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                        <span>Imprimir / Salvar em PDF</span>
+                    <button onclick="imprimirApresentacaoCompleta()" class="mt-4 md:mt-0 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-black px-6 py-3 rounded-xl transition shadow-lg no-print">
+                        Imprimir / Salvar PDF Completo
                     </button>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- RESUMO ECOMMERCE -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-brand-navy border-b border-slate-300 pb-2 mb-3">Módulo Ecommerce B2B</h3>
-                        <div id="resumo-ecom-dados" class="space-y-2 text-sm text-slate-700">
-                            <!-- Preenchido via JS -->
+                <div class="space-y-6">
+                    <!-- DADOS RESUMIDOS ECOMMERCE -->
+                    <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 print-card">
+                        <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">1. Mapeamento Ecommerce B2B</h3>
+                        <div id="resumo-ecom-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <!-- Injetado dinamicamente via Javascript -->
                         </div>
                     </div>
 
-                    <!-- RESUMO TELEVENDAS -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-brand-navy border-b border-slate-300 pb-2 mb-3">Módulo Televendas (LifeGrowth)</h3>
-                        <div id="resumo-tele-dados" class="space-y-2 text-sm text-slate-700">
-                            <!-- Preenchido via JS -->
+                    <!-- DADOS RESUMIDOS TELEVENDAS -->
+                    <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 print-card">
+                        <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">2. Mapeamento Televendas (LifeGrowth)</h3>
+                        <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            <!-- Injetado dinamicamente via Javascript -->
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-8 bg-gradient-to-r from-brand-navy to-brand-dark text-white p-6 rounded-xl text-center">
-                    <h3 class="text-xl font-bold text-brand-green mb-1">Próximos Passos: Apresentação de Proposta Técnica</h3>
-                    <p class="text-slate-300 text-sm">Com base nos dados mapeados acima, nossa equipe desenhará a integração ao seu ERP.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- PAINEL ADMINISTRATIVO (MODAL MODERNO) -->
-    <div id="admin-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 p-6">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-3 mb-4">
-                <h3 class="text-lg font-bold text-brand-navy">Painel de Administração de Mídias</h3>
-                <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
-            </div>
+    <footer class="w-full text-center py-4 text-xs text-brand-textMuted no-print">
+        LifeApps Soluções Digitais — www.lifeapps.com.br
+    </footer>
 
-            <div class="space-y-6">
-                <!-- MÍDIA ECOMMERCE -->
-                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                    <h4 class="font-bold text-sm text-brand-navy mb-2">Mídia do Módulo Ecommerce</h4>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Link de Embed do YouTube ou URL do GIF/Imagem:</label>
-                    <input type="text" id="admin-url-ecom" class="w-full border border-slate-300 rounded p-2 text-sm bg-white mb-2" placeholder="Ex: https://www.youtube.com/embed/dQw4w9WgXcQ ou URL do GIF">
-                </div>
-
-                <!-- MÍDIA TELEVENDAS -->
-                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                    <h4 class="font-bold text-sm text-brand-navy mb-2">Mídia do Módulo Televendas (LifeGrowth)</h4>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Link de Embed do YouTube ou URL do GIF/Imagem:</label>
-                    <input type="text" id="admin-url-tele" class="w-full border border-slate-300 rounded p-2 text-sm bg-white mb-2" placeholder="Ex: https://www.youtube.com/embed/dQw4w9WgXcQ ou URL do GIF">
-                </div>
-            </div>
-
-            <div class="mt-6 border-t border-slate-200 pt-4 flex justify-end space-x-3">
-                <button onclick="toggleAdminModal()" class="px-4 py-2 text-sm text-slate-600 hover:bg-slate-100 rounded-lg">Cancelar</button>
-                <button onclick="salvarConfigAdmin()" class="px-4 py-2 text-sm bg-brand-green hover:bg-brand-greenHover text-slate-900 font-bold rounded-lg shadow">Salvar Alterações</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT DE INTERATIVIDADE E NAVEGAÇÃO -->
+    <!-- LOGICA JAVASCRIPT DA APLICAÇÃO -->
     <script>
-        // ESTADO GLOBAL DA APLICAÇÃO
-        const appState = {
-            midias: {
-                ecommerce: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                televendas: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            diagEcom: {},
-            diagTele: {}
-        };
-
         // NAVEGAÇÃO ENTRE ETAPAS
         function navigate(stepId) {
             document.querySelectorAll('.step-section').forEach(sec => sec.classList.add('hidden'));
@@ -469,93 +444,51 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // SALVAR DIAGNÓSTICO ECOMMERCE
-        function salvarEDevancerEcom() {
-            const form = document.getElementById('form-ecommerce');
+        // SALVAR DADOS DO FORMULÁRIO E AVANÇAR
+        function salvarEAvancar(formId, nextStep) {
+            const form = document.getElementById(formId);
             const formData = new FormData(form);
-            formData.forEach((val, key) => appState.diagEcom[key] = val);
             
-            renderizarMidiaEcom();
-            navigate('show-ecommerce');
+            if(formId === 'form-ecommerce') {
+                const target = document.getElementById('resumo-ecom-conteudo');
+                target.innerHTML = '';
+                formData.forEach((val, key) => {
+                    target.innerHTML += `<div class="py-1 border-b border-slate-800/80"><strong class="text-slate-400">${key.replace('ecom_', '').toUpperCase()}:</strong> <span class="text-white font-medium">${val || 'Não informado'}</span></div>`;
+                });
+            } else if(formId === 'form-televendas') {
+                const target = document.getElementById('resumo-tele-conteudo');
+                target.innerHTML = '';
+                formData.forEach((val, key) => {
+                    target.innerHTML += `<div class="py-1 border-b border-slate-800/80"><strong class="text-slate-400">${key.replace('tele_', '').toUpperCase()}:</strong> <span class="text-white font-medium">${val || 'Não informado'}</span></div>`;
+                });
+            }
+
+            navigate(nextStep);
         }
 
-        // SALVAR DIAGNÓSTICO TELEVENDAS
-        function salvarEDevancerTele() {
-            const form = document.getElementById('form-televendas');
-            const formData = new FormData(form);
-            formData.forEach((val, key) => appState.diagTele[key] = val);
-
-            renderizarMidiaTele();
-            navigate('show-televendas');
-            gerarResumoFinal();
-        }
-
-        // PAINEL ADMIN
-        function toggleAdminModal() {
-            const modal = document.getElementById('admin-modal');
-            modal.classList.toggle('hidden');
-            if(!modal.classList.contains('hidden')) {
-                document.getElementById('admin-url-ecom').value = appState.midias.ecommerce;
-                document.getElementById('admin-url-tele').value = appState.midias.televendas;
+        // CARREGAR VÍDEOS DO YOUTUBE
+        function carregarVideos() {
+            if(VIDEOS_YOUTUBE.ecommerce) {
+                document.getElementById('iframe-ecom').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.ecommerce}?rel=0`;
+            }
+            if(VIDEOS_YOUTUBE.televendas) {
+                document.getElementById('iframe-tele').src = `https://www.youtube.com/embed/${VIDEOS_YOUTUBE.televendas}?rel=0`;
             }
         }
 
-        function salvarConfigAdmin() {
-            const urlEcom = document.getElementById('admin-url-ecom').value;
-            const urlTele = document.getElementById('admin-url-tele').value;
-
-            if(urlEcom) appState.midias.ecommerce = urlEcom;
-            if(urlTele) appState.midias.televendas = urlTele;
-
-            renderizarMidiaEcom();
-            renderizarMidiaTele();
-            toggleAdminModal();
-        }
-
-        // RENDERIZAÇÃO DE MÍDIAS (GIFS / YOUTUBE)
-        function renderizarMidiaEcom() {
-            const container = document.getElementById('container-midia-ecom');
-            const url = appState.midias.ecommerce;
-            container.innerHTML = gerarHTMLMidia(url);
-        }
-
-        function renderizarMidiaTele() {
-            const container = document.getElementById('container-midia-tele');
-            const url = appState.midias.televendas;
-            container.innerHTML = gerarHTMLMidia(url);
-        }
-
-        function gerarHTMLMidia(url) {
-            if(url.includes('youtube.com') || url.includes('youtu.be')) {
-                return `<iframe class="w-full h-full rounded-lg" src="${url}" title="Vídeo de Apresentação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-            } else {
-                return `<img src="${url}" alt="Mídia de Apresentação" class="max-h-full max-w-full object-contain rounded-lg">`;
-            }
-        }
-
-        // GERAR RESUMO DO DIAGNÓSTICO PARA IMPRESSÃO / FECHAMENTO
-        function gerarResumoFinal() {
-            const divEcom = document.getElementById('resumo-ecom-dados');
-            const divTele = document.getElementById('resumo-tele-dados');
-
-            divEcom.innerHTML = Object.keys(appState.diagEcom).length ? Object.entries(appState.diagEcom).map(([k, v]) => `
-                <div class="flex justify-between border-b border-slate-200 py-1">
-                    <span class="text-xs font-semibold text-slate-500">${k.replace('ecom_', '').toUpperCase()}:</span>
-                    <span class="text-xs font-bold text-brand-navy">${v || 'Não informado'}</span>
-                </div>
-            `).join('') : '<p class="text-xs text-slate-400">Diagnóstico não preenchido.</p>';
-
-            divTele.innerHTML = Object.keys(appState.diagTele).length ? Object.entries(appState.diagTele).map(([k, v]) => `
-                <div class="flex justify-between border-b border-slate-200 py-1">
-                    <span class="text-xs font-semibold text-slate-500">${k.replace('tele_', '').toUpperCase()}:</span>
-                    <span class="text-xs font-bold text-brand-navy">${v || 'Não informado'}</span>
-                </div>
-            `).join('') : '<p class="text-xs text-slate-400">Diagnóstico não preenchido.</p>';
+        // IMPRESSÃO COMPLETA (DIAGNÓSTICOS + APRESENTAÇÃO)
+        function imprimirApresentacaoCompleta() {
+            // Exibe todas as etapas para o navegador capturar no PDF
+            document.querySelectorAll('.step-section').forEach(sec => sec.classList.remove('hidden'));
+            window.print();
+            // Retorna ao resumo após imprimir
+            setTimeout(() => {
+                navigate('resumo');
+            }, 1000);
         }
 
         // INICIALIZAÇÃO
-        renderizarMidiaEcom();
-        renderizarMidiaTele();
+        carregarVideos();
     </script>
 </body>
 </html>
