@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeapps | Plataforma Omnichannel B2B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0052FF;
+            --primary-dark: #003ECC;
+            --secondary-green: #10B981;
+            --dark-blue: #0B1B3D;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        /* Containers */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header Nav */
+        header { background: #ffffff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--dark-blue); }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        /* Buttons */
+        .btn-primary { background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-secondary { background: transparent; color: var(--dark-blue); border: 1px solid var(--border-color); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        
+        /* Hero Section */
+        .hero { padding: 96px 0 64px; background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-light) 100%); text-align: center; }
+        .badge { background: rgba(0, 82, 255, 0.1); color: var(--primary); padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
+        .hero h1 { font-size: 48px; font-weight: 800; color: var(--dark-blue); max-width: 800px; margin: 0 auto 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; color: var(--text-muted); max-width: 680px; margin: 0 auto 32px; }
+        .hero-btns { display: flex; gap: 16px; justify-content: center; }
+
+        /* Metrics Bar (Estilo Agile B2B) */
+        .metrics-bar { background: var(--dark-blue); color: #fff; padding: 40px 0; margin-top: 48px; border-radius: 16px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 24px; }
+        .metric-item h3 { font-size: 36px; font-weight: 800; color: var(--secondary-green); }
+        .metric-item p { color: #94A3B8; font-size: 14px; margin-top: 4px; }
+
+        /* Solutions Grid */
+        .solutions { padding: 96px 0; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-header h2 { font-size: 36px; color: var(--dark-blue); font-weight: 800; }
+        .section-header p { color: var(--text-muted); font-size: 18px; }
+        
+        .grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 32px; transition: 0.3s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); border-color: var(--primary); }
+        .card-icon { width: 48px; height: 48px; background: rgba(0, 82, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--primary); font-weight: bold; }
+        .card h3 { font-size: 20px; color: var(--dark-blue); margin-bottom: 12px; }
+        .card p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; }
+        .card a { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+
+        /* Footer */
+        footer { background: var(--dark-blue); color: #fff; padding: 64px 0 32px; margin-top: 64px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 48px; margin-bottom: 48px; }
+        .footer-col h4 { font-size: 16px; margin-bottom: 20px; color: #fff; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #94A3B8; text-decoration: none; transition: 0.3s; }
+        .footer-col ul li a:hover { color: #fff; }
+        .bottom-bar { border-top: 1px solid #1E293B; padding-top: 32px; text-align: center; color: #64748B; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">Life<span>apps</span></div>
+            <ul class="nav-links">
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#solucoes">Soluções Omnichannel</a></li>
+                <li><a href="#casos">Casos de Sucesso</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+            </ul>
+            <a href="#contato" class="btn-primary">Solicitar Demonstração</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge">A Plataforma Omnichannel B2B Nº 1 do Brasil</span>
+            <h1>Soluções Comerciais B2B Conectadas à Sua Operação</h1>
+            <p>Aumente o faturamento, reduza os custos operacionais e automatize processos com e-commerce, automação de WhatsApp e inteligência comercial integrados.</p>
+            <div class="hero-btns">
+                <a href="#demo" class="btn-primary">Agendar Diagnóstico Gratuito</a>
+                <a href="#solucoes" class="btn-secondary">Conhecer Plataforma</a>
+            </div>
+
+            <!-- Métricas e Prova Social (Inspirado Agile B2B / Lifeapps) -->
+            <div class="metrics-bar">
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <h3>+200</h3>
+                        <p>Clientes Ativos</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>+30%</h3>
+                        <p>Aumento na Positivação de Mix</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>98%</h3>
+                        <p>Nível de Satisfação</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3>+9 Anos</h3>
+                        <p>Experiência e Liderança B2B</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Soluções (Apresentação no Estilo Agile B2B) -->
+    <section class="solutions" id="produtos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Soluções Integradas para Escalar seu Negócio</h2>
+                <p>Cada produto resolve um desafio operacional. A Lifeapps conecta toda a sua jornada comercial.</p>
+            </div>
+            
+            <div class="grid-cards">
+                <!-- LifeCommerce -->
+                <div class="card">
+                    <div class="card-icon">LC</div>
+                    <h3>LifeCommerce</h3>
+                    <p>E-commerce B2B líder no segmento atacadista e distribuidor. Venda digital 24/7 com regras personalizadas.</p>
+                    <a href="#">Saiba mais &rarr;</a>
+                </div>
+
+                <!-- LifeChat -->
+                <div class="card">
+                    <div class="card-icon">WA</div>
+                    <h3>LifeChat</h3>
+                    <p>Transforme seu WhatsApp em uma máquina de vendas com atendimento automatizado e gestão centralizada.</p>
+                    <a href="#">Saiba mais &rarr;</a>
+                </div>
+
+                <!-- LifeGrowth -->
+                <div class="card">
+                    <div class="card-icon">AI</div>
+                    <h3>LifeGrowth</h3>
+                    <p>Inteligência comercial que identifica clientes inativos e sugere ações automáticas para ampliação de carteira.</p>
+                    <a href="#">Saiba mais &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Geral -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="color: #fff; margin-bottom: 16px;">Life<span style="color: var(--primary);">apps</span></div>
+                    <p style="color: #94A3B8; font-size: 14px;">Transformando operações atacadistas e distribuidoras com a melhor plataforma omnichannel B2B do mercado.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#">Life Commerce</a></li>
+                        <li><a href="#">Life Chat</a></li>
+                        <li><a href="#">Life Growth</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Cases de Sucesso</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="#">contato@lifeapps.com.br</a></li>
+                        <li><a href="#">(62) 3300-0330</a></li>
+                        <li><a href="#">Goiânia - GO</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>&copy; 2026 Lifeapps. Todos os direitos reservados. CNPJ: 24.790.753/0001-06</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
