@@ -60,98 +60,94 @@
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CABEÇALHO DA APRESENTAÇÃO -->
-    <header class="w-full max-w-6xl px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 no-print">
+    <!-- CABEÇALHO DA APRESENTAÇÃO (FULL WIDTH EXPANDIDO) -->
+    <header class="w-full max-w-[1600px] px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 no-print">
         <div class="flex items-center space-x-3">
             <span class="text-3xl font-black text-brand-accent tracking-tight">LifeApps</span>
             <span class="text-xs bg-brand-card text-brand-textMuted px-3 py-1 rounded-full border border-slate-700/80 uppercase font-semibold">Apresentação Comercial</span>
         </div>
         
         <!-- NAVEGAÇÃO -->
-        <nav class="flex flex-wrap justify-center gap-1 bg-brand-card p-1.5 rounded-xl border border-slate-700/60 shadow-lg text-xs font-semibold">
-            <button onclick="navigate('institucional')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">1. Quem Somos</button>
-            <button onclick="navigate('diag-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">2. Diag. Commerce</button>
-            <button onclick="navigate('show-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">3. Commerce</button>
-            <button onclick="navigate('diag-lifegrowth')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">4. Diag. LifeGrowth</button>
-            <button onclick="navigate('show-lifegrowth')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">5. LifeGrowth</button>
-            <button onclick="navigate('diag-lifechat')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">6. Diag. LifeChat</button>
-            <button onclick="navigate('show-lifechat')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">7. LifeChat</button>
-            <button onclick="navigate('resumo')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">8. Relatório</button>
+        <nav class="flex flex-wrap justify-center gap-1.5 bg-brand-card p-1.5 rounded-xl border border-slate-700/60 shadow-lg text-xs font-semibold">
+            <button onclick="navigate('institucional')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">1. Quem Somos</button>
+            <button onclick="navigate('diag-ecommerce')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">2. Diag. Commerce</button>
+            <button onclick="navigate('show-ecommerce')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">3. Commerce</button>
+            <button onclick="navigate('diag-lifegrowth')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">4. Diag. LifeGrowth</button>
+            <button onclick="navigate('show-lifegrowth')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">5. LifeGrowth</button>
+            <button onclick="navigate('diag-lifechat')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">6. Diag. LifeChat</button>
+            <button onclick="navigate('show-lifechat')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">7. LifeChat</button>
+            <button onclick="navigate('resumo')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">8. Relatório</button>
         </nav>
     </header>
 
-    <!-- CONTAINER CENTRALIZADO -->
-    <main class="w-full max-w-5xl px-4 my-auto py-4">
+    <!-- CONTAINER CENTRALIZADO FULL WIDTH (TELA AMPLIADA) -->
+    <main class="w-full max-w-[1600px] px-4 md:px-8 my-auto py-4">
 
         <!-- 1. INSTITUCIONAL & CAPA OFICIAL DA LIFEAPPS -->
         <section id="institucional" class="step-section space-y-8">
-            
-            <!-- CARD REPRODUZIDO EXATAMENTE DA CAPA DA SUA IMAGEM -->
-            <div class="bg-brand-card border border-slate-700/60 rounded-3xl p-8 md:p-14 shadow-2xl text-center flex flex-col items-center">
+            <div class="bg-brand-card border border-slate-700/60 rounded-3xl p-8 md:p-16 shadow-2xl text-center flex flex-col items-center">
                 <span class="text-brand-accent font-extrabold uppercase tracking-widest text-xs md:text-sm mb-4">
                     PLATAFORMA OMNICHANNEL B2B
                 </span>
                 
-                <h1 class="text-3xl md:text-5xl font-black leading-tight text-white max-w-4xl tracking-tight">
+                <h1 class="text-3xl md:text-6xl font-black leading-tight text-white max-w-5xl tracking-tight">
                     Acelere Vendas, Automatize o Atendimento e Elimine Gargalos Comerciais
                 </h1>
                 
-                <p class="text-slate-300 text-sm md:text-lg mt-6 max-w-3xl leading-relaxed font-normal">
+                <p class="text-slate-300 text-sm md:text-xl mt-6 max-w-4xl leading-relaxed font-normal">
                     Ecossistema completo de vendas para atacados e distribuidoras: E-commerce B2B 24/7, Televendas Orientado por Inteligência Artificial e Atendimento Omnichannel.
                 </p>
                 
-                <button onclick="navigate('diag-ecommerce')" class="mt-8 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-extrabold text-sm md:text-base px-8 py-4 rounded-xl shadow-lg shadow-brand-accent/20 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                <button onclick="navigate('diag-ecommerce')" class="mt-10 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-extrabold text-base md:text-lg px-10 py-5 rounded-2xl shadow-lg shadow-brand-accent/20 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
                     <span>Iniciar Diagnóstico Comercial</span>
                     <span>&rarr;</span>
                 </button>
             </div>
 
-            <!-- SEÇÃO QUEM É A LIFEAPPS (PULL OFICIAL DO SITE/SOBRE) -->
-            <div class="bg-brand-card/70 border border-slate-700/50 rounded-3xl p-6 md:p-8 space-y-6">
-                <div class="text-center max-w-2xl mx-auto">
+            <!-- SEÇÃO QUEM É A LIFEAPPS -->
+            <div class="bg-brand-card/70 border border-slate-700/50 rounded-3xl p-8 md:p-12 space-y-6">
+                <div class="text-center max-w-3xl mx-auto">
                     <span class="text-brand-blue font-bold text-xs uppercase tracking-wider">Sobre a LifeApps</span>
-                    <h2 class="text-2xl font-bold text-white mt-1">A Plataforma Omnichannel B2B Nº 1 do Brasil</h2>
-                    <p class="text-xs md:text-sm text-brand-textMuted mt-2 leading-relaxed">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">A Plataforma Omnichannel B2B Nº 1 do Brasil</h2>
+                    <p class="text-sm md:text-base text-brand-textMuted mt-3 leading-relaxed">
                         Há mais de 9 anos transformamos negócios B2B com tecnologia de ponta, integrando vendas, atendimento e gestão em uma única plataforma inteligente. Nossa missão é revolucionar o comércio digital respeitando o momento atual da sua empresa.
                     </p>
                 </div>
 
-                <!-- METRICAS DA LIFEAPPS (EXTRAÍDAS DO SITE) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-                    <div class="bg-brand-cardInner p-4 rounded-2xl border border-slate-700/50 text-center">
-                        <span class="text-2xl md:text-3xl font-black text-brand-accent">200+</span>
-                        <p class="text-xs text-slate-300 font-semibold mt-1">Empresas Ativas</p>
-                        <p class="text-[10px] text-brand-textMuted">Confiam na plataforma no Brasil</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                    <div class="bg-brand-cardInner p-6 rounded-2xl border border-slate-700/50 text-center">
+                        <span class="text-3xl md:text-4xl font-black text-brand-accent">200+</span>
+                        <p class="text-sm text-slate-300 font-semibold mt-1">Empresas Ativas</p>
+                        <p class="text-xs text-brand-textMuted">Confiam na plataforma no Brasil</p>
                     </div>
 
-                    <div class="bg-brand-cardInner p-4 rounded-2xl border border-slate-700/50 text-center">
-                        <span class="text-2xl md:text-3xl font-black text-brand-accent">100%</span>
-                        <p class="text-xs text-slate-300 font-semibold mt-1">Nacional</p>
-                        <p class="text-[10px] text-brand-textMuted">Presença em todas as regiões</p>
+                    <div class="bg-brand-cardInner p-6 rounded-2xl border border-slate-700/50 text-center">
+                        <span class="text-3xl md:text-4xl font-black text-brand-accent">100%</span>
+                        <p class="text-sm text-slate-300 font-semibold mt-1">Nacional</p>
+                        <p class="text-xs text-brand-textMuted">Presença em todas as regiões</p>
                     </div>
 
-                    <div class="bg-brand-cardInner p-4 rounded-2xl border border-slate-700/50 text-center">
-                        <span class="text-2xl md:text-3xl font-black text-brand-accent">+300%</span>
-                        <p class="text-xs text-slate-300 font-semibold mt-1">Crescimento Médio</p>
-                        <p class="text-[10px] text-brand-textMuted">Em vendas online de nossos clientes</p>
+                    <div class="bg-brand-cardInner p-6 rounded-2xl border border-slate-700/50 text-center">
+                        <span class="text-3xl md:text-4xl font-black text-brand-accent">+300%</span>
+                        <p class="text-sm text-slate-300 font-semibold mt-1">Crescimento Médio</p>
+                        <p class="text-xs text-brand-textMuted">Em vendas online de nossos clientes</p>
                     </div>
                 </div>
             </div>
-
         </section>
 
         <!-- 2. DIAGNÓSTICO COMMERCE -->
         <section id="diag-ecommerce" class="step-section hidden">
-            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl">
+            <div class="bg-brand-card rounded-3xl p-6 md:p-12 border border-slate-700/50 shadow-2xl">
                 <div class="border-b border-slate-700 pb-4 mb-6">
                     <span class="text-brand-blue font-bold text-xs uppercase tracking-wider">Etapa 1 de 3</span>
                     <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico: E-commerce B2B (Life Commerce)</h2>
                 </div>
 
-                <form id="form-ecommerce" class="grid md:grid-cols-2 gap-5">
+                <form id="form-ecommerce" class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">1. O cliente possui e-commerce B2B ativo?</label>
-                        <select name="ecom_possui" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="ecom_possui" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione uma opção...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -160,12 +156,12 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">2. Quantidade de RCAs / Vendedores externos?</label>
-                        <input type="number" name="ecom_rcas" placeholder="Digite a quantidade..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="number" name="ecom_rcas" placeholder="Digite a quantidade..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">3. Formato de consulta do catálogo do mix?</label>
-                        <select name="ecom_catalogo" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="ecom_catalogo" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione o formato...</option>
                             <option value="Catálogo Físico em Papel">Catálogo Físico em Papel</option>
                             <option value="PDF Estático via WhatsApp">PDF Estático via WhatsApp</option>
@@ -175,7 +171,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">4. Cliente busca reposições fora do atendimento do RCA?</label>
-                        <select name="ecom_reposicao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="ecom_reposicao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim (Demanda represada à noite/finais de semana)</option>
                             <option value="Não">Não</option>
@@ -184,7 +180,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">5. Qual é o canal secundário de atendimento?</label>
-                        <select name="ecom_canal_secundario" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="ecom_canal_secundario" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione o canal...</option>
                             <option value="Televendas por Telefone">Televendas por Telefone</option>
                             <option value="Televendas por WhatsApp">Televendas por WhatsApp</option>
@@ -194,7 +190,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">6. Exige envio de orçamento prévio antes do pedido?</label>
-                        <select name="ecom_orcamento" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="ecom_orcamento" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim (Processo manual e demorado)</option>
                             <option value="Não">Não</option>
@@ -203,7 +199,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">7. Acesso fácil e online a boletos, NF-e e histórico?</label>
-                        <select name="ecom_autosservico" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="ecom_autosservico" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Gera sobrecarga no suporte)</option>
@@ -212,21 +208,21 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">8. Por qual canal consultam documentos financeiros?</label>
-                        <input type="text" name="ecom_canal_consulta" placeholder="Ex: WhatsApp, telefone, e-mail..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="ecom_canal_consulta" placeholder="Ex: WhatsApp, telefone, e-mail..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">9. N° de colaboradores usando WhatsApp corporativo?</label>
-                        <input type="number" name="ecom_whatsapp_num" placeholder="Digite a quantidade..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="number" name="ecom_whatsapp_num" placeholder="Digite a quantidade..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">10. Gargalo principal da operação comercial atual?</label>
-                        <input type="text" name="ecom_gargalo" placeholder="Descreva o gargalo principal..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="ecom_gargalo" placeholder="Descreva o gargalo principal..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div class="md:col-span-2 flex justify-end mt-4 no-print">
-                        <button type="button" onclick="salvarEAvancar('form-ecommerce', 'show-ecommerce')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition">
+                        <button type="button" onclick="salvarEAvancar('form-ecommerce', 'show-ecommerce')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition">
                             Apresentar Life Commerce &rarr;
                         </button>
                     </div>
@@ -244,26 +240,28 @@
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-0">
-                    <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid lg:grid-cols-12 gap-0">
+                    <!-- TELA DO VÍDEO AMPLIADA (7 COLUNAS NO DESKTOP) -->
+                    <div class="lg:col-span-7 p-6 md:p-8 bg-brand-dark/50 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-700/60">
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <div class="p-6 flex flex-col justify-between space-y-4">
-                        <h3 class="font-bold text-lg text-white">Impacto Comercial & Recursos</h3>
+                    <!-- CONTEÚDO AO LADO (5 COLUNAS NO DESKTOP) -->
+                    <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-4">
+                        <h3 class="font-bold text-xl text-white">Impacto Comercial & Recursos</h3>
                         
-                        <div class="space-y-3">
-                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60">
+                        <div class="space-y-4">
+                            <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60">
                                 <span class="text-red-400 font-bold text-xs uppercase">Dores Resolvidas</span>
-                                <h4 class="text-sm font-bold text-white mt-0.5">Demanda represada e perda de pedidos fora de hora</h4>
-                                <p class="text-xs text-brand-textMuted mt-1">Elimina a dependência do horário do RCA com canal 24/7, precificação dinâmica por cliente e estoque em tempo real.</p>
+                                <h4 class="text-base font-bold text-white mt-1">Demanda represada e perda de pedidos fora de hora</h4>
+                                <p class="text-xs md:text-sm text-brand-textMuted mt-1 leading-relaxed">Elimina a dependência do horário do RCA com canal 24/7, precificação dinâmica por cliente e estoque em tempo real.</p>
                             </div>
 
-                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60">
+                            <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60">
                                 <span class="text-brand-accent font-bold text-xs uppercase">Recursos Chave</span>
-                                <ul class="text-xs text-brand-textMuted mt-1 list-disc list-inside space-y-1">
+                                <ul class="text-xs md:text-sm text-brand-textMuted mt-2 list-disc list-inside space-y-1.5">
                                     <li><strong>Catálogo Digital Inteligente:</strong> Segmentado por perfil de cliente, região e marcas.</li>
                                     <li><strong>Portal do Cliente Autônomo:</strong> Repetição de pedidos em 1 clique, download de boletos e emissão de NF-e.</li>
                                     <li><strong>Orçamentos Automáticos:</strong> Cotações instantâneas respeitando regras de negócio e impostos.</li>
@@ -273,7 +271,7 @@
                         </div>
 
                         <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
-                            <button onclick="navigate('diag-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition">
+                            <button onclick="navigate('diag-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
                                 Ir para Diagnóstico LifeGrowth &rarr;
                             </button>
                         </div>
@@ -284,31 +282,31 @@
 
         <!-- 4. DIAGNÓSTICO LIFEGROWTH -->
         <section id="diag-lifegrowth" class="step-section hidden">
-            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl">
+            <div class="bg-brand-card rounded-3xl p-6 md:p-12 border border-slate-700/50 shadow-2xl">
                 <div class="border-b border-slate-700 pb-4 mb-6">
                     <span class="text-brand-accent font-bold text-xs uppercase tracking-wider">Etapa 2 de 3</span>
                     <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico: Televendas Ativo (LifeGrowth)</h2>
                 </div>
 
-                <form id="form-lifegrowth" class="grid md:grid-cols-2 gap-5">
+                <form id="form-lifegrowth" class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">1. Qual o tamanho do time de televendas?</label>
-                        <input type="number" name="tele_tamanho" placeholder="N° de operadores..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="number" name="tele_tamanho" placeholder="N° de operadores..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">2. Plataforma usada para emissão de pedidos e orçamentos?</label>
-                        <input type="text" name="tele_plataforma" placeholder="Ex: Módulo nativo do ERP..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="tele_plataforma" placeholder="Ex: Módulo nativo do ERP..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">3. Por onde chegam esses pedidos?</label>
-                        <input type="text" name="tele_origem" placeholder="Ex: WhatsApp, telefone, e-mail..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="tele_origem" placeholder="Ex: WhatsApp, telefone, e-mail..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">4. Existe integração dessa plataforma com seu ERP?</label>
-                        <select name="tele_integracao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="tele_integracao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Digitação manual)</option>
@@ -317,7 +315,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">5. Vendedor realiza prospecção e recuperação ativas?</label>
-                        <select name="tele_prospeccao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="tele_prospeccao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Operação apenas reativa/passiva)</option>
@@ -326,12 +324,12 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">6. Quais relatórios acompanham a performance?</label>
-                        <input type="text" name="tele_relatorios" placeholder="Relatórios acompanhados..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="tele_relatorios" placeholder="Relatórios acompanhados..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">7. Existe segmentação pela curva RFM (Recência, Frequência, Valor)?</label>
-                        <select name="tele_rfm" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="tele_rfm" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Sem visão de risco de churn)</option>
@@ -340,7 +338,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">8. A plataforma possui gestão de tarefas estilo CRM?</label>
-                        <select name="tele_crm" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="tele_crm" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -349,7 +347,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">9. Acompanhamento de metas e atividades executadas em tempo real?</label>
-                        <select name="tele_supervisao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="tele_supervisao" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Somente relatórios no fim do mês)</option>
@@ -358,7 +356,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">10. Existe Inteligência Artificial embarcada na plataforma?</label>
-                        <select name="tele_ia" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="tele_ia" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -366,7 +364,7 @@
                     </div>
 
                     <div class="md:col-span-2 flex justify-end mt-4 no-print">
-                        <button type="button" onclick="salvarEAvancar('form-lifegrowth', 'show-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition">
+                        <button type="button" onclick="salvarEAvancar('form-lifegrowth', 'show-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition">
                             Apresentar LifeGrowth &rarr;
                         </button>
                     </div>
@@ -374,46 +372,118 @@
             </div>
         </section>
 
-        <!-- 5. SHOWCASE LIFEGROWTH (VÍDEO bZS1asIoyPQ EMBEDDED MUTE) -->
+        <!-- 5. SHOWCASE LIFEGROWTH (LAYOUT AMPLIADO + DORES E RECURSOS COMPLETOS) -->
         <section id="show-lifegrowth" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
                     <div>
                         <span class="text-brand-accent text-xs font-bold uppercase">Apresentação de Produto</span>
-                        <h2 class="text-2xl font-bold text-white">LifeGrowth - Crescimento Guiado por Dados</h2>
+                        <h2 class="text-2xl font-bold text-white">LifeGrowth - Gestão e Inteligência para Televendas</h2>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-0">
-                    <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid lg:grid-cols-12 gap-0">
+                    <!-- TELA DO VÍDEO AMPLIADA (7 COLUNAS) -->
+                    <div class="lg:col-span-7 p-6 md:p-8 bg-brand-dark/50 flex flex-col justify-start items-center border-b lg:border-b-0 lg:border-r border-slate-700/60">
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 sticky top-24">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/bZS1asIoyPQ?autoplay=1&mute=1&loop=1&playlist=bZS1asIoyPQ&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <div class="p-6 flex flex-col justify-between space-y-4">
-                        <h3 class="font-bold text-lg text-white">Impacto Comercial & Recursos</h3>
+                    <!-- DETALHAMENTO DE DORES E RECURSOS COMPLETOS (5 COLUNAS) -->
+                    <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 max-h-[85vh] overflow-y-auto">
                         
+                        <!-- BLOCO DORES QUE A PLATAFORMA RESOLVE -->
                         <div class="space-y-3">
-                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60">
-                                <span class="text-red-400 font-bold text-xs uppercase">Dores Resolvidas</span>
-                                <h4 class="text-sm font-bold text-white mt-0.5">Televendas reativo, inatividade silenciosa e perda de receita</h4>
-                                <p class="text-xs text-brand-textMuted mt-1">Transforma operadores passivos em uma força ativa de vendas que recupera receitas e evita churn com precisão.</p>
-                            </div>
+                            <h3 class="font-bold text-lg text-red-400 uppercase tracking-wider flex items-center space-x-2">
+                                <span>Dores que a Plataforma Resolve</span>
+                            </h3>
+                            
+                            <div class="space-y-2.5 text-xs md:text-sm">
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Falta de visibilidade e controle operacional:</strong>
+                                    <span class="text-brand-textMuted">Elimina a cegueira sobre metas, faturamento em tempo real, rotina de atendimentos e atividades pendentes do time de televendas.</span>
+                                </div>
 
-                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60">
-                                <span class="text-brand-accent font-bold text-xs uppercase">Recursos Chave</span>
-                                <ul class="text-xs text-brand-textMuted mt-1 list-disc list-inside space-y-1">
-                                    <li><strong>Segmentação RFM Inteligente:</strong> Classificação automática de clientes por Recência, Frequência e Valor.</li>
-                                    <li><strong>Recuperação Automática:</strong> Ações para reativar clientes inativos e carrinhos abandonados.</li>
-                                    <li><strong>Gestão de Vendas Perdidas:</strong> Mapeamento dos motivos de perda para renegociação estratégica.</li>
-                                    <li><strong>Carrinhos Inteligentes & KPIs:</strong> Sugestão de pedidos com condições personalizadas e relatórios em tempo real.</li>
-                                </ul>
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Desorganização na rotina dos vendedores:</strong>
+                                    <span class="text-brand-textMuted">Evita tarefas perdidas, esquecimento de retornos de orçamentos e falta de acompanhamento de prazos de cotações e propostas.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Perda de clientes por falta de acompanhamento (Churn):</strong>
+                                    <span class="text-brand-textMuted">Combate a inatividade ao identificar proativamente clientes que estão comprando menos ou em risco de abandono.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Histórico disperso e descentralização:</strong>
+                                    <span class="text-brand-textMuted">Centraliza dados de pedidos, notas fiscais, faturas e históricos de conversas (como WhatsApp e e-commerce) em um só lugar.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Vendas com baixa rentabilidade e perda de mix:</strong>
+                                    <span class="text-brand-textMuted">Reduz pedidos fechados com pouca margem ou sem itens estratégicos/complementares através de indicações automatizadas.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Lentidão e erros na digitação de pedidos:</strong>
+                                    <span class="text-brand-textMuted">Agiliza a montagem de pedidos, verificação de estoque por filial, limite de crédito disponível e emissão imediata do meio de pagamento.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Falta de dados para tomada de decisão na supervisão:</strong>
+                                    <span class="text-brand-textMuted">Resolve a dificuldade de acompanhar o desempenho do time por meio de rankings, gestão de SLA por prioridade e análise da carteira.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BLOCO RECURSOS DA PLATAFORMA -->
+                        <div class="space-y-3 pt-4 border-t border-slate-700/60">
+                            <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider">
+                                Recursos Oferecidos pela Plataforma
+                            </h3>
+
+                            <div class="space-y-3 text-xs md:text-sm">
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">1. Módulo de Vendas e Operação Diária</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Dashboard de Operação:</strong> Acompanhamento de metas diárias, semanais, mensais e trimestrais (volume, faturamento e positivamento).</li>
+                                        <li><strong>Agenda de Atividades e Kanban:</strong> Organização de tarefas (A fazer, Em progresso, Em atraso, Concluídas) com justificativa obrigatória para não venda.</li>
+                                        <li><strong>Central de Notificações:</strong> Alertas automatizados para vencimento de tarefas, amostras e alterações de limites de crédito.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">2. Visão 360° do Cliente e Central de Relatórios</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Ficha Completa do Cliente:</strong> Dados cadastrais, limites de crédito, saldo utilizado, faturas e históricos.</li>
+                                        <li><strong>Linha do Tempo de Interações:</strong> Histórico integrado de chamados WhatsApp e e-commerce B2B.</li>
+                                        <li><strong>Relatórios e Filtros Avançados:</strong> Vendas por categorias, setores, fornecedores e departamentos.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">3. Pedido Web e Recomendação por IA</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Emissão de Pedidos Multi-filial:</strong> Escolha de matriz/filial, cálculo de impostos, frete e margem de rentabilidade (lucro bruto).</li>
+                                        <li><strong>Sugestão Inteligente de Mix:</strong> Recomendação por IA de itens complementares, alto giro ou promoções.</li>
+                                        <li><strong>Cobrança Integrada:</strong> Geração instantânea de QR Code Pix para pagamento imediato.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">4. Gestão, Supervisão e Inteligência Comercial</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Matriz RFM:</strong> Classificação da carteira em Campeões, VIPs, Em risco, Atenção, Promissores e Quase perdidos.</li>
+                                        <li><strong>Dashboard de Supervisão:</strong> Vendas em tempo real, ranking de colaboradores e funil de equipe.</li>
+                                        <li><strong>Configuração de SLA por Prioridade:</strong> Prazos máximos para atendimento de solicitações (Crítico, Alto, Médio, Baixo).</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
                         <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
-                            <button onclick="navigate('diag-lifechat')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition">
+                            <button onclick="navigate('diag-lifechat')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
                                 Ir para Diagnóstico LifeChat &rarr;
                             </button>
                         </div>
@@ -424,21 +494,21 @@
 
         <!-- 6. DIAGNÓSTICO LIFECHAT -->
         <section id="diag-lifechat" class="step-section hidden">
-            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl">
+            <div class="bg-brand-card rounded-3xl p-6 md:p-12 border border-slate-700/50 shadow-2xl">
                 <div class="border-b border-slate-700 pb-4 mb-6">
                     <span class="text-brand-accent font-bold text-xs uppercase tracking-wider">Etapa 3 de 3</span>
                     <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico: Atendimento Omnichannel (LifeChat)</h2>
                 </div>
 
-                <form id="form-lifechat" class="grid md:grid-cols-2 gap-5">
+                <form id="form-lifechat" class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">1. Quais canais digitais de atendimento sua empresa utiliza?</label>
-                        <input type="text" name="chat_canais" placeholder="Ex: WhatsApp, Instagram, Telegram, Site..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="chat_canais" placeholder="Ex: WhatsApp, Instagram, Telegram, Site..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">2. As conversas de WhatsApp ficam centralizadas em um único sistema?</label>
-                        <select name="chat_centralizado" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_centralizado" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Cada atendente usa um celular próprio)</option>
@@ -447,7 +517,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">3. O atendimento é dividido por áreas (Vendas, Financeiro, Logística)?</label>
-                        <select name="chat_multiagente" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_multiagente" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Atendimento misturado)</option>
@@ -456,7 +526,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">4. Existe robô com IA RAG treinada com a base de conhecimento interna?</label>
-                        <select name="chat_ia" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_ia" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não (Respostas manuais e lentas)</option>
@@ -465,7 +535,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">5. O sistema de chat consulta dados de boletos/pedidos direto no ERP?</label>
-                        <select name="chat_integracao_erp" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_integracao_erp" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -474,7 +544,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">6. Dispara campanhas de mensagens em massa segmentadas no WhatsApp?</label>
-                        <select name="chat_campanhas" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_campanhas" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -483,7 +553,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">7. A plataforma analisa sentimentos e faz transcrição de áudios?</label>
-                        <select name="chat_sentimento" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_sentimento" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -492,7 +562,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">8. A gestão tem acesso ao Pipeline de Vendas e Dashboard de Oportunidades?</label>
-                        <select name="chat_pipeline" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <select name="chat_pipeline" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                             <option value="" disabled selected>Selecione...</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
@@ -501,16 +571,16 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">9. N° médio de atendimentos mensais via WhatsApp?</label>
-                        <input type="number" name="chat_volume" placeholder="Ex: 5000" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="number" name="chat_volume" placeholder="Ex: 5000" class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-brand-textMuted mb-2">10. Qual o maior problema no atendimento atual?</label>
-                        <input type="text" name="chat_problema" placeholder="Ex: Demora para responder e falta de histórico..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3 text-sm text-white focus:border-brand-accent outline-none">
+                        <input type="text" name="chat_problema" placeholder="Ex: Demora para responder e falta de histórico..." class="w-full bg-brand-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:border-brand-accent outline-none">
                     </div>
 
                     <div class="md:col-span-2 flex justify-end mt-4 no-print">
-                        <button type="button" onclick="salvarEAvancar('form-lifechat', 'show-lifechat')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition">
+                        <button type="button" onclick="salvarEAvancar('form-lifechat', 'show-lifechat')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition">
                             Apresentar LifeChat &rarr;
                         </button>
                     </div>
@@ -518,7 +588,7 @@
             </div>
         </section>
 
-        <!-- 7. SHOWCASE LIFECHAT (VÍDEO 9iRiFMiwEE4 EMBEDDED MUTE) -->
+        <!-- 7. SHOWCASE LIFECHAT -->
         <section id="show-lifechat" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
@@ -528,26 +598,26 @@
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-0">
-                    <div class="p-6 bg-brand-dark/50 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-700/60">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid lg:grid-cols-12 gap-0">
+                    <div class="lg:col-span-7 p-6 md:p-8 bg-brand-dark/50 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-700/60">
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/9iRiFMiwEE4?autoplay=1&mute=1&loop=1&playlist=9iRiFMiwEE4&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <div class="p-6 flex flex-col justify-between space-y-4">
-                        <h3 class="font-bold text-lg text-white">Impacto Comercial & Recursos</h3>
+                    <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-4">
+                        <h3 class="font-bold text-xl text-white">Impacto Comercial & Recursos</h3>
                         
-                        <div class="space-y-3">
-                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60">
+                        <div class="space-y-4">
+                            <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60">
                                 <span class="text-red-400 font-bold text-xs uppercase">Dores Resolvidas</span>
-                                <h4 class="text-sm font-bold text-white mt-0.5">Atendimento descentralizado, filas lentas e perda de leads no WhatsApp</h4>
-                                <p class="text-xs text-brand-textMuted mt-1">Centraliza todos os canais digitais com roteamento inteligente, suporte 24/7 autônomo e visibilidade de gestão.</p>
+                                <h4 class="text-base font-bold text-white mt-1">Atendimento descentralizado, filas lentas e perda de leads no WhatsApp</h4>
+                                <p class="text-xs md:text-sm text-brand-textMuted mt-1 leading-relaxed">Centraliza todos os canais digitais com roteamento inteligente, suporte 24/7 autônomo e visibilidade de gestão.</p>
                             </div>
 
-                            <div class="bg-brand-dark p-4 rounded-2xl border border-slate-700/60">
+                            <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60">
                                 <span class="text-brand-accent font-bold text-xs uppercase">Recursos Chave</span>
-                                <ul class="text-xs text-brand-textMuted mt-1 list-disc list-inside space-y-1">
+                                <ul class="text-xs md:text-sm text-brand-textMuted mt-2 list-disc list-inside space-y-1.5">
                                     <li><strong>Multiagente Especializado:</strong> Atendentes virtuais dedicados para vendas, financeiro e logística.</li>
                                     <li><strong>IA RAG Avançada:</strong> Respostas ultra-precisas treinadas com a base de dados oficial da empresa.</li>
                                     <li><strong>Análise de Sentimentos & Voz:</strong> Interação nativa por áudio e medição de satisfação do cliente.</li>
@@ -557,7 +627,7 @@
                         </div>
 
                         <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
-                            <button onclick="navigate('resumo')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition">
+                            <button onclick="navigate('resumo')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
                                 Ver Relatório Estratégico &rarr;
                             </button>
                         </div>
@@ -568,41 +638,41 @@
 
         <!-- 8. RELATÓRIO ESTRATÉGICO FINAL & EXPORTAÇÃO EXCLUSIVA -->
         <section id="resumo" class="step-section hidden">
-            <div class="bg-brand-card rounded-3xl p-6 md:p-10 border border-slate-700/50 shadow-2xl print-card">
+            <div class="bg-brand-card rounded-3xl p-6 md:p-12 border border-slate-700/50 shadow-2xl print-card">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-700 pb-4 mb-6">
                     <div>
                         <span class="text-brand-accent font-bold text-xs uppercase">Relatório Final Gerado</span>
                         <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico Comercial & Insights de Solução</h2>
                     </div>
-                    <button onclick="window.print()" class="mt-4 md:mt-0 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-black px-6 py-3 rounded-xl transition shadow-lg no-print">
+                    <button onclick="window.print()" class="mt-4 md:mt-0 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-black px-8 py-4 rounded-xl transition shadow-lg no-print">
                         Exportar Relatório PDF
                     </button>
                 </div>
 
                 <div class="space-y-6">
                     <!-- BLOCO ECOMMERCE -->
-                    <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 print-card">
+                    <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 print-card">
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">1. Diagnóstico E-commerce B2B (Life Commerce)</h3>
-                        <div id="resumo-ecom-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs mb-4"></div>
-                        <div id="insight-ecom" class="p-3 bg-brand-card rounded-xl border border-slate-700/50 text-xs text-brand-textMuted print-card">
+                        <div id="resumo-ecom-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
+                        <div id="insight-ecom" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
                             <strong class="text-white">Insight Estratégico Life Commerce:</strong> <span>Com base nas respostas, a implementação do Portal 24/7 eliminará os gargalos operacionais de orçamentos e capturará até 25% mais pedidos em horários sem cobertura do RCA.</span>
                         </div>
                     </div>
 
                     <!-- BLOCO LIFEGROWTH -->
-                    <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 print-card">
+                    <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 print-card">
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">2. Diagnóstico Televendas Ativo (LifeGrowth)</h3>
-                        <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs mb-4"></div>
-                        <div id="insight-tele" class="p-3 bg-brand-card rounded-xl border border-slate-700/50 text-xs text-brand-textMuted print-card">
+                        <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
+                        <div id="insight-tele" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
                             <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção sistematizada no televendas.</span>
                         </div>
                     </div>
 
                     <!-- BLOCO LIFECHAT -->
-                    <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 print-card">
+                    <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 print-card">
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">3. Diagnóstico Atendimento Omnichannel (LifeChat)</h3>
-                        <div id="resumo-chat-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs mb-4"></div>
-                        <div id="insight-chat" class="p-3 bg-brand-card rounded-xl border border-slate-700/50 text-xs text-brand-textMuted print-card">
+                        <div id="resumo-chat-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
+                        <div id="insight-chat" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
                             <strong class="text-white">Insight Estratégico LifeChat:</strong> <span>A centralização no WhatsApp com IA RAG resolverá a fila de espera e liberará a equipe interna das consultas repetitivas de boletos e suporte.</span>
                         </div>
                     </div>
@@ -612,7 +682,7 @@
 
     </main>
 
-    <footer class="w-full text-center py-4 text-xs text-brand-textMuted no-print">
+    <footer class="w-full text-center py-6 text-xs text-brand-textMuted no-print">
         LifeApps Soluções Digitais — www.lifeapps.com.br
     </footer>
 
