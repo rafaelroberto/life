@@ -55,41 +55,16 @@
                 background-color: #f8fafc !important;
                 border: 1px solid #e2e8f0 !important;
             }
-            .logo-svg-white {
-                fill: #0f172a !important;
-            }
         }
     </style>
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- COMPONENTE REUTILIZÁVEL: LOGO OFICIAL LIFEAPPS EM SVG VETORIAL -->
-    <template id="lifeapps-logo-svg">
-        <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Gráfico de barras verdes -->
-            <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
-            <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
-            <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
-            <!-- Texto 'life' em Branco -->
-            <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
-            <!-- Texto 'apps' em Verde -->
-            <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
-        </svg>
-    </template>
-
     <!-- CABEÇALHO DA APRESENTAÇÃO (PRESENTE EM TODAS AS PÁGINAS) -->
     <header class="w-full max-w-[1600px] px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80">
         <div class="flex items-center space-x-4 cursor-pointer" onclick="navigate('institucional')">
-            <!-- Logo no Cabeçalho -->
-            <div class="h-8 md:h-10 flex items-center">
-                <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
-                    <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
-                    <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
-                    <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
-                    <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
-                </svg>
-            </div>
+            <!-- Logo PNG do mesmo diretório -->
+            <img src="logo.png" alt="LifeApps" class="h-8 md:h-10 w-auto object-contain">
             <span class="text-xs bg-brand-card text-brand-textMuted px-3 py-1 rounded-full border border-slate-700/80 uppercase font-semibold">Apresentação Comercial</span>
         </div>
         
@@ -113,15 +88,9 @@
         <section id="institucional" class="step-section space-y-8">
             <div class="bg-brand-card border border-slate-700/60 rounded-3xl p-8 md:p-16 shadow-2xl text-center flex flex-col items-center">
                 
-                <!-- LOGO EM DESTAQUE NA CAPA DA PÁGINA INICIAL -->
-                <div class="h-16 md:h-24 mb-6 flex items-center justify-center filter drop-shadow-md">
-                    <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
-                        <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
-                        <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
-                        <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
-                        <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
-                    </svg>
+                <!-- LOGO PNG EM DESTAQUE NA CAPA DA PÁGINA INICIAL -->
+                <div class="mb-6 flex items-center justify-center">
+                    <img src="logo.png" alt="LifeApps Logo" class="h-16 md:h-24 w-auto object-contain filter drop-shadow-md">
                 </div>
 
                 <span class="text-brand-accent font-extrabold uppercase tracking-widest text-xs md:text-sm mb-4">
@@ -619,7 +588,7 @@
             </div>
         </section>
 
-        <!-- 7. SHOWCASE LIFECHAT (DORES E RECURSOS ATUALIZADOS DO LIFECHAT) -->
+        <!-- 7. SHOWCASE LIFECHAT -->
         <section id="show-lifechat" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
@@ -730,17 +699,10 @@
         <section id="resumo" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl p-6 md:p-12 border border-slate-700/50 shadow-2xl print-card">
                 
-                <!-- CABEÇALHO DO RELATÓRIO COM LOGO EM DESTAQUE NO TOP-->
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-700 pb-6 mb-6">
                     <div>
-                        <div class="h-10 mb-3">
-                            <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
-                                <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
-                                <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
-                                <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
-                                <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
-                            </svg>
+                        <div class="mb-3">
+                            <img src="logo.png" alt="LifeApps Logo" class="h-10 w-auto object-contain">
                         </div>
                         <span class="text-brand-accent font-bold text-xs uppercase">Relatório Estratégico Comercial</span>
                         <h2 class="text-2xl font-bold text-white mt-0.5">Diagnóstico Comercial & Insights de Solução</h2>
@@ -765,7 +727,7 @@
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">2. Diagnóstico Televendas Ativo (LifeGrowth)</h3>
                         <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
                         <div id="insight-tele" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
-                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção sistematizada no televendas.</span>
+                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção systematizada no televendas.</span>
                         </div>
                     </div>
 
