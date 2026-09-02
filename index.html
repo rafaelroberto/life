@@ -2,205 +2,469 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifeapps | Plataforma Omnichannel B2B</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Proposta Comercial & Diagnóstico - LifeApps</title>
     <style>
-        :root {
-            --primary: #0052FF;
-            --primary-dark: #003ECC;
-            --secondary-green: #10B981;
-            --dark-blue: #0B1B3D;
-            --text-main: #1E293B;
-            --text-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --bg-card: #FFFFFF;
-            --border-color: #E2E8F0;
+        @page {
+            size: A4;
+            margin: 12mm 15mm 15mm 15mm;
+            @bottom-right {
+                content: "Página " counter(page) " de " counter(pages);
+                font-family: Arial, sans-serif;
+                font-size: 8pt;
+                color: #718096;
+            }
+            @bottom-left {
+                content: "LifeApps Soluções Digitais — www.lifeapps.com.br";
+                font-family: Arial, sans-serif;
+                font-size: 8pt;
+                color: #718096;
+            }
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
-        
-        /* Containers */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        
-        /* Header Nav */
-        header { background: #ffffff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-size: 24px; font-weight: 800; color: var(--dark-blue); }
-        .logo span { color: var(--primary); }
-        .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        /* Buttons */
-        .btn-primary { background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary:hover { background: var(--primary-dark); }
-        .btn-secondary { background: transparent; color: var(--dark-blue); border: 1px solid var(--border-color); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
-        
-        /* Hero Section */
-        .hero { padding: 96px 0 64px; background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-light) 100%); text-align: center; }
-        .badge { background: rgba(0, 82, 255, 0.1); color: var(--primary); padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-        .hero h1 { font-size: 48px; font-weight: 800; color: var(--dark-blue); max-width: 800px; margin: 0 auto 20px; line-height: 1.2; }
-        .hero p { font-size: 20px; color: var(--text-muted); max-width: 680px; margin: 0 auto 32px; }
-        .hero-btns { display: flex; gap: 16px; justify-content: center; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
 
-        /* Metrics Bar (Estilo Agile B2B) */
-        .metrics-bar { background: var(--dark-blue); color: #fff; padding: 40px 0; margin-top: 48px; border-radius: 16px; }
-        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 24px; }
-        .metric-item h3 { font-size: 36px; font-weight: 800; color: var(--secondary-green); }
-        .metric-item p { color: #94A3B8; font-size: 14px; margin-top: 4px; }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2D3748;
+            background-color: #FFFFFF;
+            font-size: 9.5pt;
+            line-height: 1.45;
+        }
 
-        /* Solutions Grid */
-        .solutions { padding: 96px 0; }
-        .section-header { text-align: center; margin-bottom: 64px; }
-        .section-header h2 { font-size: 36px; color: var(--dark-blue); font-weight: 800; }
-        .section-header p { color: var(--text-muted); font-size: 18px; }
-        
-        .grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 32px; transition: 0.3s; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); border-color: var(--primary); }
-        .card-icon { width: 48px; height: 48px; background: rgba(0, 82, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--primary); font-weight: bold; }
-        .card h3 { font-size: 20px; color: var(--dark-blue); margin-bottom: 12px; }
-        .card p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; }
-        .card a { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        /* Banner / Cabeçalho */
+        .header-container {
+            background: linear-gradient(135deg, #0D2538 0%, #1A365D 100%);
+            color: #FFFFFF;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
 
-        /* Footer */
-        footer { background: var(--dark-blue); color: #fff; padding: 64px 0 32px; margin-top: 64px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 48px; margin-bottom: 48px; }
-        .footer-col h4 { font-size: 16px; margin-bottom: 20px; color: #fff; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { color: #94A3B8; text-decoration: none; transition: 0.3s; }
-        .footer-col ul li a:hover { color: #fff; }
-        .bottom-bar { border-top: 1px solid #1E293B; padding-top: 32px; text-align: center; color: #64748B; font-size: 14px; }
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .header-table td {
+            vertical-align: middle;
+            padding: 0;
+        }
+
+        .brand-title {
+            font-size: 20pt;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #00E676;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 11pt;
+            color: #E2E8F0;
+            margin-top: 4px;
+            font-weight: 300;
+        }
+
+        .doc-meta {
+            text-align: right;
+            font-size: 8.5pt;
+            color: #CBD5E0;
+            line-height: 1.5;
+        }
+
+        .doc-meta strong {
+            color: #FFFFFF;
+        }
+
+        /* Títulos de Seção */
+        .section-header {
+            border-left: 4px solid #00C853;
+            padding-left: 10px;
+            margin-top: 22px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #1A365D;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .section-subtitle {
+            font-size: 8.5pt;
+            color: #718096;
+            margin-top: 2px;
+        }
+
+        /* Tabela do Diagnóstico */
+        .diag-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .diag-table th {
+            background-color: #2B6CB0;
+            color: #FFFFFF;
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .diag-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #EDF2F7;
+            font-size: 9pt;
+            vertical-align: middle;
+        }
+
+        .diag-table tr:nth-child(even) td {
+            background-color: #F7FAFC;
+        }
+
+        .diag-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .question-col {
+            width: 58%;
+            font-weight: 600;
+            color: #2D3748;
+        }
+
+        .answer-col {
+            width: 42%;
+            color: #2B6CB0;
+            font-weight: 700;
+        }
+
+        /* Badges de Destaque */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 8pt;
+            font-weight: 700;
+        }
+
+        .badge-alert {
+            background-color: #FFF5F5;
+            color: #C53030;
+            border: 1px solid #FEB2B2;
+        }
+
+        .badge-success {
+            background-color: #F0FFF4;
+            color: #2F855A;
+            border: 1px solid #9AE6B4;
+        }
+
+        .badge-info {
+            background-color: #EBF8FF;
+            color: #2B6CB0;
+            border: 1px solid #90CDF4;
+        }
+
+        /* Grade Dores x Soluções */
+        .impact-container {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .impact-container td {
+            vertical-align: top;
+            padding: 0;
+        }
+
+        .pain-box {
+            background-color: #FFF5F5;
+            border-left: 3px solid #E53E3E;
+            padding: 10px 12px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 8px;
+        }
+
+        .pain-title {
+            font-weight: 700;
+            color: #9B2C2C;
+            font-size: 8.5pt;
+            margin-bottom: 3px;
+        }
+
+        .pain-desc {
+            font-size: 8.5pt;
+            color: #742A2A;
+            margin: 0;
+        }
+
+        .solution-box {
+            background-color: #F0FFF4;
+            border-left: 3px solid #38A169;
+            padding: 10px 12px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 8px;
+        }
+
+        .solution-title {
+            font-weight: 700;
+            color: #22543D;
+            font-size: 8.5pt;
+            margin-bottom: 3px;
+        }
+
+        .solution-desc {
+            font-size: 8.5pt;
+            color: #276749;
+            margin: 0;
+        }
+
+        /* Resumo Executivo */
+        .summary-card {
+            background-color: #EDF2F7;
+            border: 1px solid #CBD5E0;
+            border-radius: 6px;
+            padding: 12px 15px;
+            margin-top: 15px;
+        }
+
+        .summary-card h4 {
+            margin: 0 0 6px 0;
+            color: #1A365D;
+            font-size: 10pt;
+        }
+
+        .summary-card p {
+            margin: 0;
+            font-size: 8.5pt;
+            color: #4A5568;
+        }
+
+        /* Call to Action */
+        .cta-box {
+            margin-top: 20px;
+            background: linear-gradient(90deg, #1A365D 0%, #2B6CB0 100%);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 14px;
+            border-radius: 6px;
+            page-break-inside: avoid;
+        }
+
+        .cta-box h3 {
+            margin: 0 0 4px 0;
+            font-size: 11pt;
+            color: #00E676;
+        }
+
+        .cta-box p {
+            margin: 0;
+            font-size: 8.5pt;
+            color: #E2E8F0;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <div class="container nav-wrapper">
-            <div class="logo">Life<span>apps</span></div>
-            <ul class="nav-links">
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#solucoes">Soluções Omnichannel</a></li>
-                <li><a href="#casos">Casos de Sucesso</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-            </ul>
-            <a href="#contato" class="btn-primary">Solicitar Demonstração</a>
-        </div>
-    </header>
+    <!-- CABEÇALHO -->
+    <div class="header-container">
+        <table class="header-table">
+            <tr>
+                <td>
+                    <div class="brand-title">LifeApps</div>
+                    <div class="brand-subtitle">Relatório de Diagnóstico & Plano de Solução Comercial</div>
+                </td>
+                <td class="doc-meta">
+                    <strong>Cliente:</strong> Distribuidora Exemplo LTDA<br>
+                    <strong>Responsável:</strong> João Silva (Diretor Comercial)<br>
+                    <strong>Data:</strong> 02 de Setembro de 2026<br>
+                    <strong>Consultor LifeApps:</strong> Atendimento Especializado
+                </td>
+            </tr>
+        </table>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <span class="badge">A Plataforma Omnichannel B2B Nº 1 do Brasil</span>
-            <h1>Soluções Comerciais B2B Conectadas à Sua Operação</h1>
-            <p>Aumente o faturamento, reduza os custos operacionais e automatize processos com e-commerce, automação de WhatsApp e inteligência comercial integrados.</p>
-            <div class="hero-btns">
-                <a href="#demo" class="btn-primary">Agendar Diagnóstico Gratuito</a>
-                <a href="#solucoes" class="btn-secondary">Conhecer Plataforma</a>
-            </div>
+    <!-- MÓDULO 1: ECOMMERCE B2B -->
+    <div class="section-header">
+        <div class="section-title">1. Módulo E-commerce B2B (Canal de Vendas 24/7)</div>
+        <div class="section-subtitle">Mapeamento operacional da força de vendas e canais de atendimento digitais</div>
+    </div>
 
-            <!-- Métricas e Prova Social (Inspirado Agile B2B / Lifeapps) -->
-            <div class="metrics-bar">
-                <div class="metrics-grid">
-                    <div class="metric-item">
-                        <h3>+200</h3>
-                        <p>Clientes Ativos</p>
-                    </div>
-                    <div class="metric-item">
-                        <h3>+30%</h3>
-                        <p>Aumento na Positivação de Mix</p>
-                    </div>
-                    <div class="metric-item">
-                        <h3>98%</h3>
-                        <p>Nível de Satisfação</p>
-                    </div>
-                    <div class="metric-item">
-                        <h3>+9 Anos</h3>
-                        <p>Experiência e Liderança B2B</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <table class="diag-table">
+        <thead>
+            <tr>
+                <th class="question-col">Indicador Avaliado (Diagnóstico)</th>
+                <th class="answer-col">Cenário Atual do Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Possui Canal de E-commerce B2B Ativo?</td>
+                <td><span class="badge badge-alert">Não</span> (Dependência total de canal presencial/televendas)</td>
+            </tr>
+            <tr>
+                <td>Tamanho da Equipe de Vendedores / RCAs</td>
+                <td><span class="badge badge-info">35 Vendedores de Campo</span></td>
+            </tr>
+            <tr>
+                <td>Formato do Catálogo de Produtos para o Mix</td>
+                <td>Catálogo Físico em Papel e PDF estático via WhatsApp</td>
+            </tr>
+            <tr>
+                <td>Cliente busca reposição fora do horário do RCA?</td>
+                <td><span class="badge badge-alert">Sim</span> (Demanda represada à noite e finais de semana)</td>
+            </tr>
+            <tr>
+                <td>Canais Secundários de Atendimento Atuais</td>
+                <td>Televendas por WhatsApp e Telefone (Descentralizado)</td>
+            </tr>
+            <tr>
+                <td>Solicitação recorrente de orçamentos prévios?</td>
+                <td><span class="badge badge-alert">Sim</span> (Processo manual com alto tempo de resposta)</td>
+            </tr>
+            <tr>
+                <td>Acesso Autosserviço (2ª via de boleto, faturas, histórico)?</td>
+                <td><span class="badge badge-alert">Não</span> (Gera sobrecarga no time financeiro e televendas)</td>
+            </tr>
+            <tr>
+                <td>Colaboradores utilizando WhatsApp para vendas</td>
+                <td><span class="badge badge-info">18 Atendentes</span> sem gestão unificada de histórico</td>
+            </tr>
+            <tr>
+                <td><strong>Gargalo Operacional Crítico Identificado</strong></td>
+                <td><strong style="color: #C53030;">Lentidão no envio de orçamentos e perda de pedidos fora do horário comercial.</strong></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- Grid de Soluções (Apresentação no Estilo Agile B2B) -->
-    <section class="solutions" id="produtos">
-        <div class="container">
-            <div class="section-header">
-                <h2>Soluções Integradas para Escalar seu Negócio</h2>
-                <p>Cada produto resolve um desafio operacional. A Lifeapps conecta toda a sua jornada comercial.</p>
-            </div>
-            
-            <div class="grid-cards">
-                <!-- LifeCommerce -->
-                <div class="card">
-                    <div class="card-icon">LC</div>
-                    <h3>LifeCommerce</h3>
-                    <p>E-commerce B2B líder no segmento atacadista e distribuidor. Venda digital 24/7 com regras personalizadas.</p>
-                    <a href="#">Saiba mais &rarr;</a>
+    <!-- PLANO DE AÇÃO ECOMMERCE -->
+    <table class="impact-container">
+        <tr>
+            <td style="width: 49%; padding-right: 1%;">
+                <div class="pain-box">
+                    <div class="pain-title">DOR DETECTADA: Pedidos Perdedores & Reposição Represada</div>
+                    <div class="pain-desc">Clientes ficam sem atendimento nos horários em que o RCA não está presente, recorrendo a concorrentes para compras de emergência.</div>
                 </div>
+                <div class="pain-box">
+                    <div class="pain-title">DOR DETECTADA: Sobrecarga em Consultas de Rotina</div>
+                    <div class="pain-desc">Equipe despende tempo valioso emitindo 2ª via de boletos, faturas e consultando histórico de pedidos manualmente.</div>
+                </div>
+            </td>
+            <td style="width: 49%; padding-left: 1%;">
+                <div class="solution-box">
+                    <div class="solution-title">SOLUÇÃO LIFEAPPS: Portal B2B 24/7 Autônomo</div>
+                    <div class="solution-desc">Plataforma web/app personalizada com catálogo dinâmico, preços específicos por cliente e canal de vendas aberto 24h por dia.</div>
+                </div>
+                <div class="solution-box">
+                    <div class="solution-title">SOLUÇÃO LIFEAPPS: Central do Cliente & Autosserviço</div>
+                    <div class="solution-desc">Painel onde o comprador baixa boletos atualizados, consulta notas e repete pedidos antigos com apenas 1 clique.</div>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-                <!-- LifeChat -->
-                <div class="card">
-                    <div class="card-icon">WA</div>
-                    <h3>LifeChat</h3>
-                    <p>Transforme seu WhatsApp em uma máquina de vendas com atendimento automatizado e gestão centralizada.</p>
-                    <a href="#">Saiba mais &rarr;</a>
-                </div>
+    <!-- MÓDULO 2: TELEVENDAS (LIFEGROWTH) -->
+    <div class="section-header">
+        <div class="section-title">2. Módulo Televendas Estratégico (LifeGrowth)</div>
+        <div class="section-subtitle">Análise da maturidade da gestão de vendas internas e uso de inteligência comercial</div>
+    </div>
 
-                <!-- LifeGrowth -->
-                <div class="card">
-                    <div class="card-icon">AI</div>
-                    <h3>LifeGrowth</h3>
-                    <p>Inteligência comercial que identifica clientes inativos e sugere ações automáticas para ampliação de carteira.</p>
-                    <a href="#">Saiba mais &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <table class="diag-table">
+        <thead>
+            <tr>
+                <th class="question-col">Indicador Avaliado (Diagnóstico)</th>
+                <th class="answer-col">Cenário Atual do Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tamanho da Equipe de Televendas Ativa</td>
+                <td><span class="badge badge-info">12 Operadores Internos</span></td>
+            </tr>
+            <tr>
+                <td>Plataforma Utilizada para Emissão de Pedidos</td>
+                <td>Módulo nativo direto no ERP (Sem foco comercial/CRM)</td>
+            </tr>
+            <tr>
+                <td>Integração Automática da Plataforma com o ERP</td>
+                <td><span class="badge badge-success">Sim</span> (Direct API)</td>
+            </tr>
+            <tr>
+                <td>Vendedores atuam na Prospecção e Recuperação de Carteira?</td>
+                <td><span class="badge badge-alert">Não</span> (Atendimento estritamente reativo / receptivo)</td>
+            </tr>
+            <tr>
+                <td>Análise de Matriz RFM (Recência, Frequência e Valor)?</td>
+                <td><span class="badge badge-alert">Não</span> (Falta de visibilidade de clientes em churn)</td>
+            </tr>
+            <tr>
+                <td>Gerenciamento de Atividades e Tarefas Estilo CRM?</td>
+                <td><span class="badge badge-alert">Não</span> (Sem acompanhamento de motivos de perda)</td>
+            </tr>
+            <tr>
+                <td>Acompanhamento de Metas e Atividades em Tempo Real?</td>
+                <td>Relatórios estáticos gerados apenas no fim do dia/mês</td>
+            </tr>
+            <tr>
+                <td>Presença de Inteligência Artificial Embarcada para Sugestão?</td>
+                <td><span class="badge badge-alert">Não</span> (Depende da memória e experiência do operador)</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- Footer Geral -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="logo" style="color: #fff; margin-bottom: 16px;">Life<span style="color: var(--primary);">apps</span></div>
-                    <p style="color: #94A3B8; font-size: 14px;">Transformando operações atacadistas e distribuidoras com a melhor plataforma omnichannel B2B do mercado.</p>
+    <!-- PLANO DE AÇÃO TELEVENDAS -->
+    <table class="impact-container">
+        <tr>
+            <td style="width: 49%; padding-right: 1%;">
+                <div class="pain-box">
+                    <div class="pain-title">DOR DETECTADA: Inatividade de Clientes Não Percebida (Churn)</div>
+                    <div class="pain-desc">Clientes param de comprar gradativamente e o televendas só percebe semanas depois, dificultando a reativação.</div>
                 </div>
-                <div class="footer-col">
-                    <h4>Produtos</h4>
-                    <ul>
-                        <li><a href="#">Life Commerce</a></li>
-                        <li><a href="#">Life Chat</a></li>
-                        <li><a href="#">Life Growth</a></li>
-                    </ul>
+                <div class="pain-box">
+                    <div class="pain-title">DOR DETECTADA: Venda Reativa com Ticket Médio Baixo</div>
+                    <div class="pain-desc">Operadores apenas "anotam pedidos" sem sugestões inteligentes de mix complementar ou produtos habituais.</div>
                 </div>
-                <div class="footer-col">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Cases de Sucesso</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
+            </td>
+            <td style="width: 49%; padding-left: 1%;">
+                <div class="solution-box">
+                    <div class="solution-title">SOLUÇÃO LIFEGROWTH: Algoritmo Inteligente de RFM</div>
+                    <div class="solution-desc">Geração automática de carteira diária de prospecção/reativação baseada no desvio do padrão de compra do cliente.</div>
                 </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <ul>
-                        <li><a href="#">contato@lifeapps.com.br</a></li>
-                        <li><a href="#">(62) 3300-0330</a></li>
-                        <li><a href="#">Goiânia - GO</a></li>
-                    </ul>
+                <div class="solution-box">
+                    <div class="solution-title">SOLUÇÃO LIFEGROWTH: Sugestões Orientadas por IA</div>
+                    <div class="solution-desc">O sistema indica em tela os produtos ideais para cross-selling e ofertas baseadas na inteligência de dados do histórico.</div>
                 </div>
-            </div>
-            <div class="bottom-bar">
-                <p>&copy; 2026 Lifeapps. Todos os direitos reservados. CNPJ: 24.790.753/0001-06</p>
-            </div>
-        </div>
-    </footer>
+            </td>
+        </tr>
+    </table>
+
+    <!-- RESUMO EXECUTIVO -->
+    <div class="summary-card">
+        <h4>Impacto Projetado com a Implementação LifeApps</h4>
+        <p>A unificação do <strong>Portal E-commerce B2B</strong> com o <strong>Televendas LifeGrowth</strong> permitirá um aumento estimado de <strong>18% a 25% no faturamento da carteira atual</strong> através de vendas ativas orientadas por IA, redução do ciclo do pedido e liberação da equipe comercial para prospecções estratégicas.</p>
+    </div>
+
+    <!-- CALL TO ACTION -->
+    <div class="cta-box">
+        <h3>Próximo Passo: Validação Técnica e Projeto Piloto</h3>
+        <p>Entre em contato com o seu executivo de contas LifeApps para definir o cronograma de implementação e integração ao seu ERP.</p>
+    </div>
 
 </body>
 </html>
