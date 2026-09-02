@@ -55,15 +55,41 @@
                 background-color: #f8fafc !important;
                 border: 1px solid #e2e8f0 !important;
             }
+            .logo-svg-white {
+                fill: #0f172a !important;
+            }
         }
     </style>
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CABEÇALHO DA APRESENTAÇÃO (FULL WIDTH EXPANDIDO) -->
-    <header class="w-full max-w-[1600px] px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 no-print">
-        <div class="flex items-center space-x-3">
-            <span class="text-3xl font-black text-brand-accent tracking-tight">LifeApps</span>
+    <!-- COMPONENTE REUTILIZÁVEL: LOGO OFICIAL LIFEAPPS EM SVG VETORIAL -->
+    <template id="lifeapps-logo-svg">
+        <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Gráfico de barras verdes -->
+            <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
+            <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
+            <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
+            <!-- Texto 'life' em Branco -->
+            <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
+            <!-- Texto 'apps' em Verde -->
+            <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
+        </svg>
+    </template>
+
+    <!-- CABEÇALHO DA APRESENTAÇÃO (PRESENTE EM TODAS AS PÁGINAS) -->
+    <header class="w-full max-w-[1600px] px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80">
+        <div class="flex items-center space-x-4 cursor-pointer" onclick="navigate('institucional')">
+            <!-- Logo no Cabeçalho -->
+            <div class="h-8 md:h-10 flex items-center">
+                <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
+                    <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
+                    <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
+                    <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
+                    <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
+                </svg>
+            </div>
             <span class="text-xs bg-brand-card text-brand-textMuted px-3 py-1 rounded-full border border-slate-700/80 uppercase font-semibold">Apresentação Comercial</span>
         </div>
         
@@ -80,12 +106,24 @@
         </nav>
     </header>
 
-    <!-- CONTAINER CENTRALIZADO FULL WIDTH (TELA AMPLIADA) -->
-    <main class="w-full max-w-[1600px] px-4 md:px-8 my-auto py-4">
+    <!-- CONTAINER CENTRALIZADO FULL WIDTH -->
+    <main class="w-full max-w-[1600px] px-4 md:px-8 my-auto py-6">
 
         <!-- 1. INSTITUCIONAL & CAPA OFICIAL DA LIFEAPPS -->
         <section id="institucional" class="step-section space-y-8">
             <div class="bg-brand-card border border-slate-700/60 rounded-3xl p-8 md:p-16 shadow-2xl text-center flex flex-col items-center">
+                
+                <!-- LOGO EM DESTAQUE NA CAPA DA PÁGINA INICIAL -->
+                <div class="h-16 md:h-24 mb-6 flex items-center justify-center filter drop-shadow-md">
+                    <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
+                        <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
+                        <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
+                        <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
+                        <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
+                    </svg>
+                </div>
+
                 <span class="text-brand-accent font-extrabold uppercase tracking-widest text-xs md:text-sm mb-4">
                     PLATAFORMA OMNICHANNEL B2B
                 </span>
@@ -581,7 +619,7 @@
             </div>
         </section>
 
-        <!-- 7. SHOWCASE LIFECHAT (COM DORES E RECURSOS MAPEADOS DO VÍDEO) -->
+        <!-- 7. SHOWCASE LIFECHAT (DORES E RECURSOS ATUALIZADOS DO LIFECHAT) -->
         <section id="show-lifechat" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
@@ -592,17 +630,13 @@
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-0">
-                    <!-- TELA DO VÍDEO AMPLIADA (7 COLUNAS) -->
                     <div class="lg:col-span-7 p-6 md:p-8 bg-brand-dark/50 flex flex-col justify-start items-center border-b lg:border-b-0 lg:border-r border-slate-700/60">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 sticky top-24">
                             <iframe class="w-full h-full" src="https://www.youtube.com/embed/9iRiFMiwEE4?autoplay=1&mute=1&loop=1&playlist=9iRiFMiwEE4&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- DETALHAMENTO DE DORES E RECURSOS DO LIFECHAT (5 COLUNAS) -->
                     <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 max-h-[85vh] overflow-y-auto">
-                        
-                        <!-- BLOCO DORES QUE A PLATAFORMA RESOLVE -->
                         <div class="space-y-3">
                             <h3 class="font-bold text-lg text-red-400 uppercase tracking-wider flex items-center space-x-2">
                                 <span>Dores que a Plataforma Resolve</span>
@@ -641,7 +675,6 @@
                             </div>
                         </div>
 
-                        <!-- BLOCO RECURSOS OFERECIDOS PELA PLATAFORMA -->
                         <div class="space-y-3 pt-4 border-t border-slate-700/60">
                             <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider">
                                 Recursos Oferecidos pela Plataforma
@@ -651,8 +684,8 @@
                                 <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
                                     <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">1. Dashboard & Indicadores Gerais</h4>
                                     <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
-                                        <li><strong>Métricas de Atendimento em Tempo Real:</strong> Monitoramento de contatos ativos e receptivos, tempo médio de espera (TME) e tempo médio de atendimento (TMA).</li>
-                                        <li><strong>Status de Atendimentos:</strong> Visão consolidada de quantos clientes estão aguardando, em andamento, finalizados e a divisão entre robôs e atendentes humanos.</li>
+                                        <li><strong>Métricas em Tempo Real:</strong> Contatos ativos/receptivos, tempo médio de espera (TME) e tempo médio de atendimento (TMA).</li>
+                                        <li><strong>Status de Atendimentos:</strong> Visão consolidada de clientes aguardando, em andamento, finalizados e divisão robôs x humanos.</li>
                                     </ul>
                                 </div>
 
@@ -660,24 +693,24 @@
                                     <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">2. Gestão de WhatsApp e Multi-Canais</h4>
                                     <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
                                         <li><strong>Hub Centralizado de WhatsApp:</strong> Conexão de múltiplos números e atendentes em uma única plataforma.</li>
-                                        <li><strong>Estruturação por Departamentos:</strong> Criação de diversos setores dentro da empresa (ex.: SAC, Financeiro, Comercial) para direcionar o atendimento.</li>
-                                        <li><strong>Disparo em Massa com Templates:</strong> Suporte ao cadastro de modelos aprovados para envio de mensagens em massa pela própria plataforma.</li>
+                                        <li><strong>Estruturação por Departamentos:</strong> Criação de setores (SAC, Financeiro, Comercial) para roteamento automático.</li>
+                                        <li><strong>Disparo em Massa com Templates:</strong> Envio de mensagens segmentadas em escala com modelos aprovados.</li>
                                     </ul>
                                 </div>
 
                                 <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
                                     <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">3. Inteligência Artificial e Histórico</h4>
                                     <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
-                                        <li><strong>Resumo de Conversa por IA:</strong> Síntese automatizada destacando necessidade do cliente, proposta comercial enviada, resultados e próximos passos.</li>
+                                        <li><strong>Resumo de Conversa por IA:</strong> Síntese automatizada destacando necessidade, proposta enviada e próximos passos.</li>
                                         <li><strong>Histórico Completo de Interações:</strong> Acesso à conversa integral linha a linha sempre que necessário.</li>
-                                        <li><strong>Integração com Life Growth:</strong> Sincronização automática dos resumos e conversas do WhatsApp direto na Timeline do cliente no CRM Life Growth.</li>
+                                        <li><strong>Integração com Life Growth:</strong> Sincronização dos resumos e conversas direto na Timeline do CRM Life Growth.</li>
                                     </ul>
                                 </div>
 
                                 <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
                                     <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">4. Cadastros e Carteiras</h4>
                                     <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
-                                        <li><strong>Gestão de Clientes e Empresas:</strong> Mapeamento completo com opção de vincular a uma carteira de atendimento específica por vendedor.</li>
+                                        <li><strong>Gestão de Clientes e Empresas:</strong> Mapeamento com vinculação a carteiras de atendimento por vendedor.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -696,10 +729,21 @@
         <!-- 8. RELATÓRIO ESTRATÉGICO FINAL & EXPORTAÇÃO EXCLUSIVA -->
         <section id="resumo" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl p-6 md:p-12 border border-slate-700/50 shadow-2xl print-card">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-700 pb-4 mb-6">
+                
+                <!-- CABEÇALHO DO RELATÓRIO COM LOGO EM DESTAQUE NO TOP-->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-700 pb-6 mb-6">
                     <div>
-                        <span class="text-brand-accent font-bold text-xs uppercase">Relatório Final Gerado</span>
-                        <h2 class="text-2xl font-bold text-white mt-1">Diagnóstico Comercial & Insights de Solução</h2>
+                        <div class="h-10 mb-3">
+                            <svg class="h-full w-auto" viewBox="0 0 450 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0" y="70" width="24" height="24" rx="3" fill="#00E676"/>
+                                <rect x="40" y="38" width="24" height="56" rx="3" fill="#00E676"/>
+                                <rect x="80" y="52" width="24" height="42" rx="3" fill="#00E676"/>
+                                <path class="logo-svg-white" fill="#FFFFFF" d="M118 20 h12 v74 h-12 z M142 32 h12 v62 h-12 z M142 20 h12 v8 h-12 z M166 32 h28 v10 h-16 v16 h14 v10 h-14 v26 h-12 z M206 62 c0-18 12-32 30-32 c18 0 28 12 28 30 v6 h-46 c2 10 10 16 20 16 c8 0 14-4 16-8 h12 c-4 12-16 18-28 18 c-18 0-32-14-32-30 z M252 56 c0-8-6-14-16-14 c-8 0-14 6-16 14 z"/>
+                                <path fill="#00E676" d="M280 62 c0-18 12-30 28-30 c12 0 22 6 26 16 v-14 h12 v60 h-12 v-12 c-4 10-14 16-26 16 c-16 0-28-12-28-36 z M334 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z M358 34 h12 v10 c4-8 12-12 22-12 c16 0 26 12 26 30 s-10 32-26 32 c-10 0-18-4-22-12 v24 h-12 z M406 62 c0-12-8-20-18-20 s-18 8-18 20 s8 20 18 20 s18-8 18-20 z"/>
+                            </svg>
+                        </div>
+                        <span class="text-brand-accent font-bold text-xs uppercase">Relatório Estratégico Comercial</span>
+                        <h2 class="text-2xl font-bold text-white mt-0.5">Diagnóstico Comercial & Insights de Solução</h2>
                     </div>
                     <button onclick="window.print()" class="mt-4 md:mt-0 bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-black px-8 py-4 rounded-xl transition shadow-lg no-print">
                         Exportar Relatório PDF
@@ -730,7 +774,7 @@
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">3. Diagnóstico Atendimento Omnichannel (LifeChat)</h3>
                         <div id="resumo-chat-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
                         <div id="insight-chat" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
-                            <strong class="text-white">Insight Estratégico LifeChat:</strong> <span>A centralização no WhatsApp com IA RAG resolverá a fila de espera e liberará a equipe interna das consultas repetitivas de boletos e suporte.</span>
+                            <strong class="text-white">Insight Estratégico LifeChat:</strong> <span>A centralização no WhatsApp com inteligência artificial resolverá a fila de espera, unificará o histórico das conversas e liberará os atendentes de tarefas manuais.</span>
                         </div>
                     </div>
                 </div>
