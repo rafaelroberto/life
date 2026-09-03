@@ -70,7 +70,7 @@
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CABEÇALHO DA APRESENTAÇÃO (MENU MODERNO, ENXUTO E COMPACTO) -->
+    <!-- CABEÇALHO DA APRESENTAÇÃO (MENU COMPACTO) -->
     <header class="w-full max-w-[1600px] px-6 py-4 flex flex-col lg:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80 sticky top-0 bg-brand-dark/95 backdrop-blur-md z-50">
         
         <!-- LOGO DA LIFEAPPS -->
@@ -90,9 +90,9 @@
 
             <span class="text-slate-700 mx-1 font-light">/</span>
 
-            <!-- 2. COMMERCE -->
+            <!-- 2. ECOMMERCE -->
             <div id="parent-commerce" class="step-item flex items-center space-x-1 p-1 rounded-xl border border-transparent transition">
-                <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">Commerce:</span>
+                <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">Ecommerce:</span>
                 <button onclick="navigate('diag-ecommerce')" id="nav-diag-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Diag</button>
                 <button onclick="navigate('show-ecommerce')" id="nav-show-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Solução</button>
                 <button onclick="navigate('cases-ecommerce')" id="nav-cases-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Cases</button>
@@ -681,17 +681,17 @@
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- 1ª COLUNA: CASE DE SUCESSO ICONIC -->
+                    <!-- 1ª COLUNA: CASE DE SUCESSO ICONIC COM A URL DA LOGO ATUALIZADA DA GEOAMBIENTE -->
                     <div class="space-y-6">
                         <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
                             <span>Case de Sucesso</span>
                         </h3>
 
-                        <!-- CASE ICONIC -->
+                        <!-- CASE ICONIC COM A URL ATUALIZADA DA LOGO -->
                         <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 space-y-4">
                             <div class="flex justify-between items-center">
-                                <div class="bg-white p-2 rounded-xl flex items-center justify-center max-w-[140px]">
-                                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMbnaTsQGiZ3BHlcn9NneVAlL514uPyjrB5DFMDcs0YpxrJXDEQk20unaQGz2btO8dasby56maCU_4HcmndJnlWM" alt="ICONIC Lubrificantes Logo" class="h-12 w-auto object-contain">
+                                <div class="bg-white p-2.5 rounded-xl flex items-center justify-center max-w-[160px]">
+                                    <img src="https://www.geoambiente.com/novo/wp-content/uploads/2023/11/iconiclubrificantes_logo.jpg" alt="ICONIC Lubrificantes Logo" class="h-10 w-auto object-contain">
                                 </div>
                                 <span class="text-xs bg-slate-800 text-brand-accent font-semibold px-3 py-1 rounded-full border border-brand-accent/30">Ipiranga & Chevron</span>
                             </div>
@@ -707,13 +707,12 @@
                         </div>
                     </div>
 
-                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS (KPIS TELEVENDAS + GRÁFICO) -->
+                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS -->
                     <div class="space-y-6">
                         <h3 class="font-bold text-lg text-brand-blue uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
                             <span>Resultados Comprovados em Televendas</span>
                         </h3>
 
-                        <!-- KPIS DO TELEVENDAS -->
                         <div class="space-y-3">
                             <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
                                 <span class="text-xs md:text-sm font-semibold text-slate-300">Reativação de clientes inativos (RFM)</span>
@@ -741,7 +740,7 @@
                             </div>
                         </div>
 
-                        <!-- GRÁFICO EM LINHAS DUPLO FICTÍCIO -->
+                        <!-- GRÁFICO EM LINHAS DUPLO -->
                         <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 space-y-3">
                             <div class="flex justify-between items-center">
                                 <span class="text-xs font-bold uppercase text-brand-textMuted">Eficiência Comercial & Conversão de Reativações</span>
@@ -761,11 +760,8 @@
                                     <line x1="0" y1="60" x2="400" y2="60" stroke="#334155" stroke-dasharray="3,3"/>
                                     <line x1="0" y1="90" x2="400" y2="90" stroke="#334155" stroke-dasharray="3,3"/>
 
-                                    <!-- Curva de Crescimento da Positivação -->
                                     <polygon points="0,110 0,90 40,85 80,75 120,68 160,55 200,45 240,35 280,28 320,20 360,12 400,5 400,110" fill="url(#chartGradTele)" />
                                     <polyline points="0,90 40,85 80,75 120,68 160,55 200,45 240,35 280,28 320,20 360,12 400,5" fill="none" stroke="#3A86FF" stroke-width="3" stroke-linecap="round"/>
-
-                                    <!-- Curva de Queda do Tempo de Espera (Métrica Positiva de Agilidade) -->
                                     <polyline points="0,20 40,30 80,45 120,60 160,75 200,85 240,92 280,98 320,102 360,105 400,108" fill="none" stroke="#00E676" stroke-width="2" stroke-dasharray="4,4"/>
 
                                     <circle cx="400" cy="5" r="4" fill="#3A86FF" stroke="#ffffff" stroke-width="1.5"/>
