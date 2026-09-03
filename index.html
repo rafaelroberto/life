@@ -79,7 +79,7 @@
             <span class="text-[10px] bg-brand-card text-brand-textMuted px-2.5 py-0.5 rounded-full border border-slate-700/80 uppercase font-semibold tracking-wide">Apresentação</span>
         </div>
         
-        <!-- NOVO MENU STEPPER HORIZONTAL (LIMPO, COMPACTO E SEM DROPDOWN) -->
+        <!-- MENU STEPPER HORIZONTAL -->
         <nav class="flex items-center bg-brand-card p-1.5 rounded-2xl border border-slate-700/70 shadow-xl overflow-x-auto max-w-full text-xs font-semibold">
             
             <!-- 1. QUEM SOMOS -->
@@ -90,7 +90,7 @@
 
             <span class="text-slate-700 mx-1 font-light">/</span>
 
-            <!-- 2. COMMERCE (AGRUPADO EM SUB-PASSOS) -->
+            <!-- 2. COMMERCE -->
             <div id="parent-commerce" class="step-item flex items-center space-x-1 p-1 rounded-xl border border-transparent transition">
                 <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">Commerce:</span>
                 <button onclick="navigate('diag-ecommerce')" id="nav-diag-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Diag</button>
@@ -105,6 +105,7 @@
                 <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">LifeGrowth:</span>
                 <button onclick="navigate('diag-lifegrowth')" id="nav-diag-lifegrowth" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Diag</button>
                 <button onclick="navigate('show-lifegrowth')" id="nav-show-lifegrowth" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Solução</button>
+                <button onclick="navigate('cases-lifegrowth')" id="nav-cases-lifegrowth" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Cases</button>
             </div>
 
             <span class="text-slate-700 mx-1 font-light">/</span>
@@ -381,7 +382,7 @@
                         </div>
                     </div>
 
-                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS (KPIS + GRÁFICO DE LINHAS) -->
+                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS -->
                     <div class="space-y-6">
                         <h3 class="font-bold text-lg text-brand-blue uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
                             <span>Resultados Comprovados por Clientes</span>
@@ -414,7 +415,7 @@
                             </div>
                         </div>
 
-                        <!-- GRÁFICO EM LINHAS FICTÍCIO -->
+                        <!-- GRÁFICO EM LINHAS -->
                         <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 space-y-3">
                             <div class="flex justify-between items-center">
                                 <span class="text-xs font-bold uppercase text-brand-textMuted">Evolução do Faturamento Online (12 Meses)</span>
@@ -660,11 +661,129 @@
                         </div>
 
                         <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
-                            <button onclick="navigate('diag-lifechat')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
-                                Ir para Diagnóstico LifeChat &rarr;
+                            <button onclick="navigate('cases-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
+                                Ver Cases & Resultados de Televendas &rarr;
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.1 CASES DE SUCESSO & RESULTADOS COMPROVADOS DO LIFEGROWTH + LIFECHAT -->
+        <section id="cases-lifegrowth" class="step-section hidden">
+            <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl p-6 md:p-10">
+                <div class="border-b border-slate-700 pb-4 mb-6 flex justify-between items-center">
+                    <div>
+                        <span class="text-brand-accent font-bold text-xs uppercase tracking-wider">Módulo Televendas & Omnichannel</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mt-0.5">Case de Sucesso & Resultados Comprovados</h2>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- 1ª COLUNA: CASE DE SUCESSO ICONIC -->
+                    <div class="space-y-6">
+                        <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
+                            <span>Case de Sucesso</span>
+                        </h3>
+
+                        <!-- CASE ICONIC -->
+                        <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <div class="bg-white p-2 rounded-xl flex items-center justify-center max-w-[140px]">
+                                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMbnaTsQGiZ3BHlcn9NneVAlL514uPyjrB5DFMDcs0YpxrJXDEQk20unaQGz2btO8dasby56maCU_4HcmndJnlWM" alt="ICONIC Lubrificantes Logo" class="h-12 w-auto object-contain">
+                                </div>
+                                <span class="text-xs bg-slate-800 text-brand-accent font-semibold px-3 py-1 rounded-full border border-brand-accent/30">Ipiranga & Chevron</span>
+                            </div>
+
+                            <p class="text-xs text-brand-textMuted leading-relaxed">
+                                A <strong>ICONIC</strong> é a empresa brasileira líder no mercado de lubrificantes, nascida da fusão das operações da <strong>Ipiranga</strong> e da <strong>Chevron (Texaco)</strong> no Brasil.
+                            </p>
+
+                            <blockquote class="text-xs md:text-sm text-slate-300 italic leading-relaxed border-l-2 border-brand-accent pl-3">
+                                "Com a implementação conjunta do LifeGrowth e do LifeChat, reestruturamos toda a inteligência da nossa força de vendas interna. A segmentação automática por RFM permitiu que a equipe de televendas atuasse exatamente nos clientes em risco de inatividade, aumentando a taxa de reativação em 48%. Além disso, a centralização do WhatsApp no LifeChat reduziu o tempo médio de resposta de horas para minutos."
+                            </blockquote>
+                            <p class="text-xs font-bold text-brand-accent text-right">— Gestão de Operações Comerciais, ICONIC Lubrificantes</p>
+                        </div>
+                    </div>
+
+                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS (KPIS TELEVENDAS + GRÁFICO) -->
+                    <div class="space-y-6">
+                        <h3 class="font-bold text-lg text-brand-blue uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
+                            <span>Resultados Comprovados em Televendas</span>
+                        </h3>
+
+                        <!-- KPIS DO TELEVENDAS -->
+                        <div class="space-y-3">
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Reativação de clientes inativos (RFM)</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+42% em 6 meses</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Redução do Tempo de Espera (WhatsApp)</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">-58% no TMA</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Aumento da frequência de compra</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+38% na carteira</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Positivação da carteira diária</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+52% de conversão</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Redução de Churn (Inatividade)</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">-35% de perdas</span>
+                            </div>
+                        </div>
+
+                        <!-- GRÁFICO EM LINHAS DUPLO FICTÍCIO -->
+                        <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase text-brand-textMuted">Eficiência Comercial & Conversão de Reativações</span>
+                                <span class="text-xs text-brand-accent font-bold">+52% Positivação</span>
+                            </div>
+                            
+                            <div class="w-full h-36 pt-2">
+                                <svg class="w-full h-full" viewBox="0 0 400 120" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="chartGradTele" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#3A86FF" stop-opacity="0.4"/>
+                                            <stop offset="100%" stop-color="#3A86FF" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <line x1="0" y1="30" x2="400" y2="30" stroke="#334155" stroke-dasharray="3,3"/>
+                                    <line x1="0" y1="60" x2="400" y2="60" stroke="#334155" stroke-dasharray="3,3"/>
+                                    <line x1="0" y1="90" x2="400" y2="90" stroke="#334155" stroke-dasharray="3,3"/>
+
+                                    <!-- Curva de Crescimento da Positivação -->
+                                    <polygon points="0,110 0,90 40,85 80,75 120,68 160,55 200,45 240,35 280,28 320,20 360,12 400,5 400,110" fill="url(#chartGradTele)" />
+                                    <polyline points="0,90 40,85 80,75 120,68 160,55 200,45 240,35 280,28 320,20 360,12 400,5" fill="none" stroke="#3A86FF" stroke-width="3" stroke-linecap="round"/>
+
+                                    <!-- Curva de Queda do Tempo de Espera (Métrica Positiva de Agilidade) -->
+                                    <polyline points="0,20 40,30 80,45 120,60 160,75 200,85 240,92 280,98 320,102 360,105 400,108" fill="none" stroke="#00E676" stroke-width="2" stroke-dasharray="4,4"/>
+
+                                    <circle cx="400" cy="5" r="4" fill="#3A86FF" stroke="#ffffff" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+
+                            <div class="flex justify-between items-center text-[10px] text-brand-textMuted font-semibold pt-1 border-t border-slate-800">
+                                <span class="flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-blue-500 inline-block"></span> <span>Taxa de Positivação</span></span>
+                                <span class="flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span> <span>Redução do Tempo de Espera</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-700/60 flex justify-end mt-8 no-print">
+                    <button onclick="navigate('diag-lifechat')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl text-sm transition">
+                        Ir para Diagnóstico LifeChat &rarr;
+                    </button>
                 </div>
             </div>
         </section>
@@ -936,6 +1055,7 @@
             'cases-ecommerce': 'parent-commerce',
             'diag-lifegrowth': 'parent-lifegrowth',
             'show-lifegrowth': 'parent-lifegrowth',
+            'cases-lifegrowth': 'parent-lifegrowth',
             'diag-lifechat': 'parent-lifechat',
             'show-lifechat': 'parent-lifechat',
             'resumo': null
@@ -943,7 +1063,6 @@
 
         // NAVEGAÇÃO ENTRE ETAPAS E ATUALIZAÇÃO DO MENU
         function navigate(stepId) {
-            // Oculta todas as seções e exibe apenas a atual
             document.querySelectorAll('.step-section').forEach(sec => sec.classList.add('hidden'));
             const targetSection = document.getElementById(stepId);
             if(targetSection) {
@@ -964,7 +1083,7 @@
                 activeBtn.classList.add('bg-brand-accent', 'text-slate-950', 'font-bold');
             }
 
-            // Destaca a pílula numerada (se aplicável)
+            // Destaca a pílula numerada
             if(stepId === 'institucional') {
                 const pill = document.querySelector('#nav-institucional .step-pill');
                 if(pill) pill.classList.add('active');
