@@ -126,7 +126,7 @@
             </button>
         </nav>
 
-        <!-- BOTÃO 1: MODO APRESENTAÇÃO (TELA CHEIA) - PRESENTE EM TODAS AS PÁGINAS -->
+        <!-- BOTÃO 1: MODO APRESENTAÇÃO (TELA CHEIA) -->
         <button onclick="toggleFullscreen()" id="btn-fullscreen" class="bg-brand-card hover:bg-slate-800 text-brand-accent border border-brand-accent/40 px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 shrink-0 shadow-lg">
             <svg id="icon-expand" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h6M4 4l5 5m11-1V4m0 0h-6m6 0l-5 5M4 16v4m0 0h6m-6 0l5-5m11 5l-5-5m5 5v-4m0 4h-6"></path></svg>
             <svg id="icon-compress" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H4m0 0l5 5m-5-5l5-5m10 5h-6m0 0l5 5m-5-5l5-5"></path></svg>
@@ -289,7 +289,7 @@
             </div>
         </section>
 
-        <!-- 3. SHOWCASE COMMERCE (COM BOTÃO LIVE DEMO) -->
+        <!-- 3. SHOWCASE COMMERCE (VÍDEO ECOM + DORES E RECURSOS MAPEADOS DO VÍDEO) -->
         <section id="show-ecommerce" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
                 <div class="p-6 border-b border-slate-700/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -298,7 +298,7 @@
                         <h2 class="text-2xl font-bold text-white">Life Commerce - O Motor da Transformação Digital B2B</h2>
                     </div>
 
-                    <!-- BOTÃO 2: APLICAÇÃO LIVE DEMO ECOMMERCE -->
+                    <!-- BOTÃO LIVE DEMO ECOMMERCE -->
                     <a href="https://atacadoonline-v2.lifeappsecommerce.com.br/atacadoonline" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-brand-accent border border-brand-accent/50 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center space-x-2 shadow-md hover:scale-105 transform">
                         <span class="relative flex h-2.5 w-2.5">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
@@ -310,30 +310,88 @@
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-0">
-                    <div class="lg:col-span-7 p-6 md:p-8 bg-brand-dark/50 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-700/60">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- TELA DO VÍDEO ATUALIZADA (_VM-6UkLBL4) -->
+                    <div class="lg:col-span-7 p-6 md:p-8 bg-brand-dark/50 flex flex-col justify-start items-center border-b lg:border-b-0 lg:border-r border-slate-700/60">
+                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 sticky top-24">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/_VM-6UkLBL4?autoplay=1&mute=1&loop=1&playlist=_VM-6UkLBL4&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-4">
-                        <h3 class="font-bold text-xl text-white">Impacto Comercial & Recursos</h3>
+                    <!-- DETALHAMENTO DE DORES E RECURSOS DO ECOMMERCE (MAPEADOS DO VÍDEO) -->
+                    <div class="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 max-h-[85vh] overflow-y-auto">
                         
-                        <div class="space-y-4">
-                            <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60">
-                                <span class="text-red-400 font-bold text-xs uppercase">Dores Resolvidas</span>
-                                <h4 class="text-base font-bold text-white mt-1">Demanda represada e perda de pedidos fora de hora</h4>
-                                <p class="text-xs md:text-sm text-brand-textMuted mt-1 leading-relaxed">Elimina a dependência do horário do RCA com canal 24/7, precificação dinâmica por cliente e estoque em tempo real.</p>
-                            </div>
+                        <!-- BLOCO DORES QUE A PLATAFORMA RESOLVE -->
+                        <div class="space-y-3">
+                            <h3 class="font-bold text-lg text-red-400 uppercase tracking-wider flex items-center space-x-2">
+                                <span>Dores que a Plataforma Resolve</span>
+                            </h3>
+                            
+                            <div class="space-y-2.5 text-xs md:text-sm">
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Atendimento estritamente dependente do RCA presencial:</strong>
+                                    <span class="text-brand-textMuted">Elimina a demanda represada à noite e finais de semana com canal 24/7 com regras e tabelas de preço automatizadas por cliente.</span>
+                                </div>
 
-                            <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60">
-                                <span class="text-brand-accent font-bold text-xs uppercase">Recursos Chave</span>
-                                <ul class="text-xs md:text-sm text-brand-textMuted mt-2 list-disc list-inside space-y-1.5">
-                                    <li><strong>Catálogo Digital Inteligente:</strong> Segmentado por perfil de cliente, região e marcas.</li>
-                                    <li><strong>Portal do Cliente Autônomo:</strong> Repetição de pedidos em 1 clique, download de boletos e emissão de NF-e.</li>
-                                    <li><strong>Orçamentos Automáticos:</strong> Cotações instantâneas respeitando regras de negócio e impostos.</li>
-                                    <li><strong>App Nativo (iOS/Android):</strong> Aumenta a frequência de compra com usabilidade mobile superior.</li>
-                                </ul>
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Sobrecarga no atendimento para consultas operacionais:</strong>
+                                    <span class="text-brand-textMuted">Acaba com ligações repetitivas para emissão de 2ª via de boletos, faturas abertas e consulta de notas fiscais diretamente no site.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Lentidão e atrito na geração de orçamentos:</strong>
+                                    <span class="text-brand-textMuted">Substitui cotações manuais por um calculador instantâneo com impostos, regras comerciais e consulta de estoque em tempo real.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Falta de incentivo ao aumento do mix e ticket médio:</strong>
+                                    <span class="text-brand-textMuted">Automatiza a apresentação de combos promocionais, cupons de incentivo e programas de recompensas sem depender do vendedor.</span>
+                                </div>
+
+                                <div class="bg-brand-dark p-3.5 rounded-xl border border-slate-700/60">
+                                    <strong class="text-white block mb-0.5">Campanhas de vendas com baixo alcance e pouca retenção:</strong>
+                                    <span class="text-brand-textMuted">Atinge a carteira em segundos com disparos de notificações push segmentadas e canal de vendas mobile integrado.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BLOCO RECURSOS OFERECIDOS PELA PLATAFORMA (MAPEADOS DO VÍDEO) -->
+                        <div class="space-y-3 pt-4 border-t border-slate-700/60">
+                            <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider">
+                                Recursos Oferecidos pela Plataforma
+                            </h3>
+
+                            <div class="space-y-3 text-xs md:text-sm">
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">1. Portal B2B Autônomo & Vitrine de Produtos</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Vitrine por Categorias & Banners Sazonais:</strong> Navegação dinâmica por marcas, setores e ofertas sazonais (ex.: Festival de Inverno).</li>
+                                        <li><strong>Carrinho Ágil Multi-Unidade:</strong> Compra direta por caixa fechada, fardo ou unidade com cálculo imediato.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">2. Central Financeira & Acesso do Vendedor</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Meus Documentos (Autosserviço 24h):</strong> Download instantâneo de notas fiscais, faturas e linha digitável de boletos.</li>
+                                        <li><strong>Acesso Híbrido Vendedor/Consultor:</strong> O RCA pode logar na conta do cliente para montar listas e acelerar o pedido.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">3. Motor de Promoções, Cupons & Recompensas</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Combos Promocionais & Cupons:</strong> Aplicação de regras automáticas por categoria ou cupom de recomendação.</li>
+                                        <li><strong>Clube Atacado+ (Programa de Pontos):</strong> Acúmulo de pontos resgatáveis em descontos ou cashback no carrinho.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-brand-cardInner p-3.5 rounded-xl border border-slate-700/60">
+                                    <h4 class="font-bold text-white text-sm border-b border-slate-700/80 pb-1 mb-2">4. Disparos Push & Dashboard Backoffice</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-brand-textMuted">
+                                        <li><strong>Notificações Push Segmentadas:</strong> Mensagens diretas no App/Web com relatórios de entregas e cliques.</li>
+                                        <li><strong>Painel de Gestão Comercial:</strong> Monitoramento de ruptura, avaliação dos clientes, ticket médio e vendas por canal.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -581,7 +639,7 @@
                         <h2 class="text-2xl font-bold text-white">LifeGrowth - Gestão e Inteligência para Televendas</h2>
                     </div>
 
-                    <!-- BOTÃO 2: APLICAÇÃO LIVE DEMO LIFEGROWTH -->
+                    <!-- BOTÃO LIVE DEMO LIFEGROWTH -->
                     <a href="https://lifegrowthlifeapps.netlify.app/" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-brand-accent border border-brand-accent/50 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center space-x-2 shadow-md hover:scale-105 transform">
                         <span class="relative flex h-2.5 w-2.5">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
@@ -915,7 +973,7 @@
                         <h2 class="text-2xl font-bold text-white">LifeChat - Gestão de Atendimento e Comunicação Omnichannel</h2>
                     </div>
 
-                    <!-- BOTÃO 2: APLICAÇÃO LIVE DEMO LIFECHAT -->
+                    <!-- BOTÃO LIVE DEMO LIFECHAT -->
                     <a href="https://lifechat.lifeappsecommerce.com.br/" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-brand-accent border border-brand-accent/50 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center space-x-2 shadow-md hover:scale-105 transform">
                         <span class="relative flex h-2.5 w-2.5">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
@@ -1055,7 +1113,7 @@
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">2. Diagnóstico Televendas Ativo (LifeGrowth)</h3>
                         <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
                         <div id="insight-tele" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
-                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção sistematizada no televendas.</span>
+                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção systematizada no televendas.</span>
                         </div>
                     </div>
 
