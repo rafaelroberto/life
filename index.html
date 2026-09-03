@@ -60,24 +60,24 @@
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CABEÇALHO DA APRESENTAÇÃO (PRESENTE EM TODAS AS PÁGINAS) -->
+    <!-- CABEÇALHO DA APRESENTAÇÃO -->
     <header class="w-full max-w-[1600px] px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80">
         <div class="flex items-center space-x-4 cursor-pointer" onclick="navigate('institucional')">
-            <!-- Logo PNG do mesmo diretório -->
             <img src="logo.png" alt="LifeApps" class="h-8 md:h-10 w-auto object-contain">
             <span class="text-xs bg-brand-card text-brand-textMuted px-3 py-1 rounded-full border border-slate-700/80 uppercase font-semibold">Apresentação Comercial</span>
         </div>
         
         <!-- NAVEGAÇÃO -->
         <nav class="flex flex-wrap justify-center gap-1.5 bg-brand-card p-1.5 rounded-xl border border-slate-700/60 shadow-lg text-xs font-semibold">
-            <button onclick="navigate('institucional')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">1. Quem Somos</button>
-            <button onclick="navigate('diag-ecommerce')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">2. Diag. Commerce</button>
-            <button onclick="navigate('show-ecommerce')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">3. Commerce</button>
-            <button onclick="navigate('diag-lifegrowth')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">4. Diag. LifeGrowth</button>
-            <button onclick="navigate('show-lifegrowth')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">5. LifeGrowth</button>
-            <button onclick="navigate('diag-lifechat')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">6. Diag. LifeChat</button>
-            <button onclick="navigate('show-lifechat')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">7. LifeChat</button>
-            <button onclick="navigate('resumo')" class="px-3.5 py-2 rounded-lg hover:text-brand-accent transition">8. Relatório</button>
+            <button onclick="navigate('institucional')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">1. Quem Somos</button>
+            <button onclick="navigate('diag-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">2. Diag. Commerce</button>
+            <button onclick="navigate('show-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">3. Commerce</button>
+            <button onclick="navigate('cases-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition text-brand-accent">3.1 Cases Commerce</button>
+            <button onclick="navigate('diag-lifegrowth')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">4. Diag. LifeGrowth</button>
+            <button onclick="navigate('show-lifegrowth')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">5. LifeGrowth</button>
+            <button onclick="navigate('diag-lifechat')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">6. Diag. LifeChat</button>
+            <button onclick="navigate('show-lifechat')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">7. LifeChat</button>
+            <button onclick="navigate('resumo')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">8. Relatório</button>
         </nav>
     </header>
 
@@ -88,7 +88,6 @@
         <section id="institucional" class="step-section space-y-8">
             <div class="bg-brand-card border border-slate-700/60 rounded-3xl p-8 md:p-16 shadow-2xl text-center flex flex-col items-center">
                 
-                <!-- LOGO PNG EM DESTAQUE NA CAPA DA PÁGINA INICIAL -->
                 <div class="mb-6 flex items-center justify-center">
                     <img src="logo.png" alt="LifeApps Logo" class="h-16 md:h-24 w-auto object-contain filter drop-shadow-md">
                 </div>
@@ -276,11 +275,151 @@
                         </div>
 
                         <div class="pt-4 border-t border-slate-700/60 flex justify-end no-print">
-                            <button onclick="navigate('diag-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
-                                Ir para Diagnóstico LifeGrowth &rarr;
+                            <button onclick="navigate('cases-ecommerce')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition">
+                                Ver Cases & Resultados de E-commerce &rarr;
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.1 CASES DE SUCESSO & RESULTADOS COMPROVADOS DO ECOMMERCE -->
+        <section id="cases-ecommerce" class="step-section hidden">
+            <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl p-6 md:p-10">
+                <div class="border-b border-slate-700 pb-4 mb-6 flex justify-between items-center">
+                    <div>
+                        <span class="text-brand-accent font-bold text-xs uppercase tracking-wider">Módulo E-commerce B2B</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mt-0.5">Cases de Sucesso & Resultados Comprovados</h2>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- 1ª COLUNA: CASES DE SUCESSO -->
+                    <div class="space-y-6">
+                        <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
+                            <span>Cases de Sucesso</span>
+                        </h3>
+
+                        <!-- CASE 1: DISTRIBUIDORA MÜLLER -->
+                        <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <div class="bg-white p-2.5 rounded-xl flex items-center justify-center max-w-[160px]">
+                                    <img src="https://dmuller.com.br/wp-content/uploads/2024/09/logo.svg" alt="Distribuidora Müller Logo" class="h-8 w-auto">
+                                </div>
+                                <a href="https://loja.dmuller.com.br" target="_blank" class="text-xs text-brand-accent hover:underline font-semibold flex items-center space-x-1">
+                                    <span>loja.dmuller.com.br</span>
+                                    <span>&nearr;</span>
+                                </a>
+                            </div>
+                            <blockquote class="text-xs md:text-sm text-slate-300 italic leading-relaxed border-l-2 border-brand-accent pl-3">
+                                "A LifeApps tem atendido muito bem às necessidades da nossa operação de e-commerce. A plataforma oferece os recursos que precisamos no dia a dia, facilita a rotina da equipe e ajuda na execução dos processos. A ferramenta tem sido estável, eficiente e atende às nossas expectativas, contribuindo para melhorar a performance comercial, aumentar o faturamento e fortalecer os resultados do nosso canal de vendas. Outro fato importante a pontuar é o atendimento para solucionar problemas que é rápido e eficaz."
+                            </blockquote>
+                            <p class="text-xs font-bold text-brand-accent text-right">— Michelle, Distribuidora Müller</p>
+                        </div>
+
+                        <!-- CASE 2: COMPRE FÁCIL ATACADISTA -->
+                        <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <div class="bg-white p-2.5 rounded-xl flex items-center justify-center max-w-[180px]">
+                                    <img src="https://midias-totvs.totvs.com/wp-content/uploads/2026/04/16170035/banner-cases-logotipo-empresa-compre-facil-atacadista.png.webp" alt="Compre Fácil Atacadista Logo" class="h-8 w-auto">
+                                </div>
+                                <a href="https://shop.grupocomprefacil.com.br" target="_blank" class="text-xs text-brand-accent hover:underline font-semibold flex items-center space-x-1">
+                                    <span>shop.grupocomprefacil.com.br</span>
+                                    <span>&nearr;</span>
+                                </a>
+                            </div>
+                            <blockquote class="text-xs md:text-sm text-slate-300 italic leading-relaxed border-l-2 border-brand-accent pl-3">
+                                "Com o uso de estratégias e o foco no e-commerce, a Contém Alimentos obteve um crescimento de 144% no seu resultado de vendas online desde o início da operação online. As vendas através da plataforma online representam 40% do faturamento da empresa."
+                            </blockquote>
+                            <p class="text-xs font-bold text-brand-accent text-right">— Kauê e Allan, Gestores Compre Fácil Atacadista / SP</p>
+                        </div>
+                    </div>
+
+                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS (KPIS + GRÁFICO DE LINHAS FICTÍCIO) -->
+                    <div class="space-y-6">
+                        <h3 class="font-bold text-lg text-brand-blue uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
+                            <span>Resultados Comprovados por Clientes</span>
+                        </h3>
+
+                        <!-- LISTA DE KPIS EXTRAÍDOS DA IMAGEM -->
+                        <div class="space-y-3">
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Crescimento (+vendas)</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+32% em 12 meses</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Positivação digital</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+45% da base ativa</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Vendas fora do horário</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+22% do volume total</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Aumento na margem bruta</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+29% do volume total</span>
+                            </div>
+
+                            <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-xs md:text-sm font-semibold text-slate-300">Aumento de pedidos</span>
+                                <span class="bg-teal-600 text-white font-bold text-xs md:text-sm px-3.5 py-1.5 rounded-lg shadow-sm">+5% por cliente</span>
+                            </div>
+                        </div>
+
+                        <!-- GRÁFICO EM LINHAS FICTÍCIO DO CRESCIMENTO DAS VENDAS -->
+                        <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase text-brand-textMuted">Evolução do Faturamento Online (12 Meses)</span>
+                                <span class="text-xs text-brand-accent font-bold">+144% Acumulado</span>
+                            </div>
+                            
+                            <div class="w-full h-36 pt-2">
+                                <svg class="w-full h-full" viewBox="0 0 400 120" preserveAspectRatio="none">
+                                    <!-- Gradiente da curva -->
+                                    <defs>
+                                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#00E676" stop-opacity="0.4"/>
+                                            <stop offset="100%" stop-color="#00E676" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Linhas de grade de fundo -->
+                                    <line x1="0" y1="30" x2="400" y2="30" stroke="#334155" stroke-dasharray="3,3"/>
+                                    <line x1="0" y1="60" x2="400" y2="60" stroke="#334155" stroke-dasharray="3,3"/>
+                                    <line x1="0" y1="90" x2="400" y2="90" stroke="#334155" stroke-dasharray="3,3"/>
+
+                                    <!-- Área preenchida sob a curva -->
+                                    <polygon points="0,110 0,95 40,90 80,82 120,70 160,65 200,50 240,42 280,30 320,22 360,15 400,8 400,110" fill="url(#chartGrad)" />
+
+                                    <!-- Linha do gráfico em destaque -->
+                                    <polyline points="0,95 40,90 80,82 120,70 160,65 200,50 240,42 280,30 320,22 360,15 400,8" fill="none" stroke="#00E676" stroke-width="3" stroke-linecap="round"/>
+
+                                    <!-- Pontos marcadores -->
+                                    <circle cx="0" cy="95" r="3" fill="#00E676"/>
+                                    <circle cx="120" cy="70" r="3" fill="#00E676"/>
+                                    <circle cx="240" cy="42" r="3" fill="#00E676"/>
+                                    <circle cx="400" cy="8" r="4" fill="#00E676" stroke="#ffffff" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+
+                            <div class="flex justify-between text-[10px] text-brand-textMuted font-semibold pt-1 border-t border-slate-800">
+                                <span>Mês 1</span>
+                                <span>Mês 4</span>
+                                <span>Mês 8</span>
+                                <span>Mês 12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-700/60 flex justify-end mt-8 no-print">
+                    <button onclick="navigate('diag-lifegrowth')" class="bg-brand-accent hover:bg-brand-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl text-sm transition">
+                        Ir para Diagnóstico LifeGrowth &rarr;
+                    </button>
                 </div>
             </div>
         </section>
@@ -727,7 +866,7 @@
                         <h3 class="font-bold text-brand-accent text-sm uppercase mb-3">2. Diagnóstico Televendas Ativo (LifeGrowth)</h3>
                         <div id="resumo-tele-conteudo" class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm mb-4"></div>
                         <div id="insight-tele" class="p-4 bg-brand-card rounded-xl border border-slate-700/50 text-xs md:text-sm text-brand-textMuted print-card">
-                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção systematizada no televendas.</span>
+                            <strong class="text-white">Insight Estratégico LifeGrowth:</strong> <span>A aplicação da Matriz RFM e algoritmos de IA na carteira reduzirá a inatividade de clientes e ativará a prospecção sistematizada no televendas.</span>
                         </div>
                     </div>
 
