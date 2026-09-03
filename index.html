@@ -26,6 +26,16 @@
         }
     </script>
     <style>
+        /* Estilo dos itens de navegação ativos */
+        .step-pill.active {
+            background-color: #00E676 !important;
+            color: #080E1E !important;
+            font-weight: 800 !important;
+        }
+        .step-item.active-parent {
+            border-color: #00E676 !important;
+        }
+
         /* Estilos de Impressão e Exportação Restrita aos Diagnósticos + Insights */
         @media print {
             body {
@@ -60,24 +70,59 @@
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CABEÇALHO DA APRESENTAÇÃO -->
-    <header class="w-full max-w-[1600px] px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80">
-        <div class="flex items-center space-x-4 cursor-pointer" onclick="navigate('institucional')">
-            <img src="logo.png" alt="LifeApps" class="h-8 md:h-10 w-auto object-contain">
-            <span class="text-xs bg-brand-card text-brand-textMuted px-3 py-1 rounded-full border border-slate-700/80 uppercase font-semibold">Apresentação Comercial</span>
+    <!-- CABEÇALHO DA APRESENTAÇÃO (MENU MODERNO, ENXUTO E COMPACTO) -->
+    <header class="w-full max-w-[1600px] px-6 py-4 flex flex-col lg:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80 sticky top-0 bg-brand-dark/95 backdrop-blur-md z-50">
+        
+        <!-- LOGO DA LIFEAPPS -->
+        <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="navigate('institucional')">
+            <img src="logo.png" alt="LifeApps" class="h-8 md:h-9 w-auto object-contain">
+            <span class="text-[10px] bg-brand-card text-brand-textMuted px-2.5 py-0.5 rounded-full border border-slate-700/80 uppercase font-semibold tracking-wide">Apresentação</span>
         </div>
         
-        <!-- NAVEGAÇÃO -->
-        <nav class="flex flex-wrap justify-center gap-1.5 bg-brand-card p-1.5 rounded-xl border border-slate-700/60 shadow-lg text-xs font-semibold">
-            <button onclick="navigate('institucional')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">1. Quem Somos</button>
-            <button onclick="navigate('diag-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">2. Diag. Commerce</button>
-            <button onclick="navigate('show-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">3. Commerce</button>
-            <button onclick="navigate('cases-ecommerce')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition text-brand-accent">3.1 Cases Commerce</button>
-            <button onclick="navigate('diag-lifegrowth')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">4. Diag. LifeGrowth</button>
-            <button onclick="navigate('show-lifegrowth')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">5. LifeGrowth</button>
-            <button onclick="navigate('diag-lifechat')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">6. Diag. LifeChat</button>
-            <button onclick="navigate('show-lifechat')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">7. LifeChat</button>
-            <button onclick="navigate('resumo')" class="px-3 py-1.5 rounded-lg hover:text-brand-accent transition">8. Relatório</button>
+        <!-- NOVO MENU STEPPER HORIZONTAL (LIMPO, COMPACTO E SEM DROPDOWN) -->
+        <nav class="flex items-center bg-brand-card p-1.5 rounded-2xl border border-slate-700/70 shadow-xl overflow-x-auto max-w-full text-xs font-semibold">
+            
+            <!-- 1. QUEM SOMOS -->
+            <button onclick="navigate('institucional')" id="nav-institucional" class="step-item flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition border border-transparent">
+                <span class="step-pill w-5 h-5 rounded-full bg-slate-800 text-[10px] flex items-center justify-center font-bold">1</span>
+                <span class="whitespace-nowrap">Quem Somos</span>
+            </button>
+
+            <span class="text-slate-700 mx-1 font-light">/</span>
+
+            <!-- 2. COMMERCE (AGRUPADO EM SUB-PASSOS) -->
+            <div id="parent-commerce" class="step-item flex items-center space-x-1 p-1 rounded-xl border border-transparent transition">
+                <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">Commerce:</span>
+                <button onclick="navigate('diag-ecommerce')" id="nav-diag-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Diag</button>
+                <button onclick="navigate('show-ecommerce')" id="nav-show-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Solução</button>
+                <button onclick="navigate('cases-ecommerce')" id="nav-cases-ecommerce" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Cases</button>
+            </div>
+
+            <span class="text-slate-700 mx-1 font-light">/</span>
+
+            <!-- 3. LIFEGROWTH -->
+            <div id="parent-lifegrowth" class="step-item flex items-center space-x-1 p-1 rounded-xl border border-transparent transition">
+                <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">LifeGrowth:</span>
+                <button onclick="navigate('diag-lifegrowth')" id="nav-diag-lifegrowth" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Diag</button>
+                <button onclick="navigate('show-lifegrowth')" id="nav-show-lifegrowth" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Solução</button>
+            </div>
+
+            <span class="text-slate-700 mx-1 font-light">/</span>
+
+            <!-- 4. LIFECHAT -->
+            <div id="parent-lifechat" class="step-item flex items-center space-x-1 p-1 rounded-xl border border-transparent transition">
+                <span class="text-brand-textMuted font-bold text-[11px] px-1 whitespace-nowrap">LifeChat:</span>
+                <button onclick="navigate('diag-lifechat')" id="nav-diag-lifechat" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Diag</button>
+                <button onclick="navigate('show-lifechat')" id="nav-show-lifechat" class="step-item px-2 py-1 rounded-lg text-slate-300 hover:text-white transition">Solução</button>
+            </div>
+
+            <span class="text-slate-700 mx-1 font-light">/</span>
+
+            <!-- 5. RELATÓRIO -->
+            <button onclick="navigate('resumo')" id="nav-resumo" class="step-item flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition border border-transparent">
+                <span class="step-pill w-5 h-5 rounded-full bg-slate-800 text-[10px] flex items-center justify-center font-bold">5</span>
+                <span class="whitespace-nowrap">Relatório</span>
+            </button>
         </nav>
     </header>
 
@@ -336,13 +381,12 @@
                         </div>
                     </div>
 
-                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS (KPIS + GRÁFICO DE LINHAS FICTÍCIO) -->
+                    <!-- 2ª COLUNA: RESULTADOS COMPROVADOS (KPIS + GRÁFICO DE LINHAS) -->
                     <div class="space-y-6">
                         <h3 class="font-bold text-lg text-brand-blue uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
                             <span>Resultados Comprovados por Clientes</span>
                         </h3>
 
-                        <!-- LISTA DE KPIS EXTRAÍDOS DA IMAGEM -->
                         <div class="space-y-3">
                             <div class="bg-brand-dark p-4 rounded-xl border border-slate-700/60 flex justify-between items-center">
                                 <span class="text-xs md:text-sm font-semibold text-slate-300">Crescimento (+vendas)</span>
@@ -370,7 +414,7 @@
                             </div>
                         </div>
 
-                        <!-- GRÁFICO EM LINHAS FICTÍCIO DO CRESCIMENTO DAS VENDAS -->
+                        <!-- GRÁFICO EM LINHAS FICTÍCIO -->
                         <div class="bg-brand-dark p-5 rounded-2xl border border-slate-700/60 space-y-3">
                             <div class="flex justify-between items-center">
                                 <span class="text-xs font-bold uppercase text-brand-textMuted">Evolução do Faturamento Online (12 Meses)</span>
@@ -379,7 +423,6 @@
                             
                             <div class="w-full h-36 pt-2">
                                 <svg class="w-full h-full" viewBox="0 0 400 120" preserveAspectRatio="none">
-                                    <!-- Gradiente da curva -->
                                     <defs>
                                         <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
                                             <stop offset="0%" stop-color="#00E676" stop-opacity="0.4"/>
@@ -387,18 +430,13 @@
                                         </linearGradient>
                                     </defs>
                                     
-                                    <!-- Linhas de grade de fundo -->
                                     <line x1="0" y1="30" x2="400" y2="30" stroke="#334155" stroke-dasharray="3,3"/>
                                     <line x1="0" y1="60" x2="400" y2="60" stroke="#334155" stroke-dasharray="3,3"/>
                                     <line x1="0" y1="90" x2="400" y2="90" stroke="#334155" stroke-dasharray="3,3"/>
 
-                                    <!-- Área preenchida sob a curva -->
                                     <polygon points="0,110 0,95 40,90 80,82 120,70 160,65 200,50 240,42 280,30 320,22 360,15 400,8 400,110" fill="url(#chartGrad)" />
-
-                                    <!-- Linha do gráfico em destaque -->
                                     <polyline points="0,95 40,90 80,82 120,70 160,65 200,50 240,42 280,30 320,22 360,15 400,8" fill="none" stroke="#00E676" stroke-width="3" stroke-linecap="round"/>
 
-                                    <!-- Pontos marcadores -->
                                     <circle cx="0" cy="95" r="3" fill="#00E676"/>
                                     <circle cx="120" cy="70" r="3" fill="#00E676"/>
                                     <circle cx="240" cy="42" r="3" fill="#00E676"/>
@@ -890,13 +928,58 @@
 
     <!-- LÓGICA JAVASCRIPT DA APLICAÇÃO -->
     <script>
-        // NAVEGAÇÃO ENTRE ETAPAS
+        // MAPA DE PARENT-GROUPS PARA DESTAQUE VISUAL
+        const parentMap = {
+            'institucional': null,
+            'diag-ecommerce': 'parent-commerce',
+            'show-ecommerce': 'parent-commerce',
+            'cases-ecommerce': 'parent-commerce',
+            'diag-lifegrowth': 'parent-lifegrowth',
+            'show-lifegrowth': 'parent-lifegrowth',
+            'diag-lifechat': 'parent-lifechat',
+            'show-lifechat': 'parent-lifechat',
+            'resumo': null
+        };
+
+        // NAVEGAÇÃO ENTRE ETAPAS E ATUALIZAÇÃO DO MENU
         function navigate(stepId) {
+            // Oculta todas as seções e exibe apenas a atual
             document.querySelectorAll('.step-section').forEach(sec => sec.classList.add('hidden'));
             const targetSection = document.getElementById(stepId);
             if(targetSection) {
                 targetSection.classList.remove('hidden');
             }
+
+            // Limpa classes ativas do menu
+            document.querySelectorAll('.step-item').forEach(el => {
+                el.classList.remove('active', 'active-parent', 'bg-brand-accent', 'text-slate-950');
+            });
+            document.querySelectorAll('.step-pill').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Destaca o botão ativo no menu
+            const activeBtn = document.getElementById(`nav-${stepId}`);
+            if(activeBtn) {
+                activeBtn.classList.add('bg-brand-accent', 'text-slate-950', 'font-bold');
+            }
+
+            // Destaca a pílula numerada (se aplicável)
+            if(stepId === 'institucional') {
+                const pill = document.querySelector('#nav-institucional .step-pill');
+                if(pill) pill.classList.add('active');
+            } else if(stepId === 'resumo') {
+                const pill = document.querySelector('#nav-resumo .step-pill');
+                if(pill) pill.classList.add('active');
+            }
+
+            // Destaca a caixa/grupo do produto correspondente
+            const parentId = parentMap[stepId];
+            if(parentId) {
+                const parentBox = document.getElementById(parentId);
+                if(parentBox) parentBox.classList.add('active-parent');
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -927,6 +1010,9 @@
 
             navigate(nextStep);
         }
+
+        // Inicializa na primeira tela com o estado do menu ativo
+        navigate('institucional');
     </script>
 </body>
 </html>
