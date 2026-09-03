@@ -70,7 +70,7 @@
 </head>
 <body class="bg-brand-dark font-sans text-slate-100 min-h-screen flex flex-col justify-between items-center antialiased">
 
-    <!-- CABEÇALHO DA APRESENTAÇÃO (MENU COMPACTO) -->
+    <!-- CABEÇALHO DA APRESENTAÇÃO COM BOTÃO MODO APRESENTAÇÃO (FULLSCREEN) -->
     <header class="w-full max-w-[1600px] px-6 py-4 flex flex-col lg:flex-row justify-between items-center gap-4 no-print border-b border-slate-800/80 sticky top-0 bg-brand-dark/95 backdrop-blur-md z-50">
         
         <!-- LOGO DA LIFEAPPS -->
@@ -125,6 +125,13 @@
                 <span class="whitespace-nowrap">Relatório</span>
             </button>
         </nav>
+
+        <!-- BOTÃO 1: MODO APRESENTAÇÃO (TELA CHEIA) - PRESENTE EM TODAS AS PÁGINAS -->
+        <button onclick="toggleFullscreen()" id="btn-fullscreen" class="bg-brand-card hover:bg-slate-800 text-brand-accent border border-brand-accent/40 px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 shrink-0 shadow-lg">
+            <svg id="icon-expand" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h6M4 4l5 5m11-1V4m0 0h-6m6 0l-5 5M4 16v4m0 0h6m-6 0l5-5m11 5l-5-5m5 5v-4m0 4h-6"></path></svg>
+            <svg id="icon-compress" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H4m0 0l5 5m-5-5l5-5m10 5h-6m0 0l5 5m-5-5l5-5"></path></svg>
+            <span id="txt-fullscreen">Modo Apresentação</span>
+        </button>
     </header>
 
     <!-- CONTAINER CENTRALIZADO FULL WIDTH -->
@@ -282,14 +289,24 @@
             </div>
         </section>
 
-        <!-- 3. SHOWCASE COMMERCE -->
+        <!-- 3. SHOWCASE COMMERCE (COM BOTÃO LIVE DEMO) -->
         <section id="show-ecommerce" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
-                <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
+                <div class="p-6 border-b border-slate-700/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <span class="text-brand-accent text-xs font-bold uppercase">Apresentação de Produto</span>
                         <h2 class="text-2xl font-bold text-white">Life Commerce - O Motor da Transformação Digital B2B</h2>
                     </div>
+
+                    <!-- BOTÃO 2: APLICAÇÃO LIVE DEMO ECOMMERCE -->
+                    <a href="https://atacadoonline-v2.lifeappsecommerce.com.br/atacadoonline" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-brand-accent border border-brand-accent/50 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center space-x-2 shadow-md hover:scale-105 transform">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-accent"></span>
+                        </span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <span>Acessar Aplicação Live Demo &rarr;</span>
+                    </a>
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-0">
@@ -555,14 +572,24 @@
             </div>
         </section>
 
-        <!-- 5. SHOWCASE LIFEGROWTH -->
+        <!-- 5. SHOWCASE LIFEGROWTH (COM BOTÃO LIVE DEMO) -->
         <section id="show-lifegrowth" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
-                <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
+                <div class="p-6 border-b border-slate-700/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <span class="text-brand-accent text-xs font-bold uppercase">Apresentação de Produto</span>
                         <h2 class="text-2xl font-bold text-white">LifeGrowth - Gestão e Inteligência para Televendas</h2>
                     </div>
+
+                    <!-- BOTÃO 2: APLICAÇÃO LIVE DEMO LIFEGROWTH -->
+                    <a href="https://lifegrowthlifeapps.netlify.app/" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-brand-accent border border-brand-accent/50 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center space-x-2 shadow-md hover:scale-105 transform">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-accent"></span>
+                        </span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <span>Acessar Aplicação Live Demo &rarr;</span>
+                    </a>
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-0">
@@ -681,13 +708,12 @@
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- 1ª COLUNA: CASE DE SUCESSO ICONIC COM A URL DA LOGO ATUALIZADA DA GEOAMBIENTE -->
+                    <!-- 1ª COLUNA: CASE DE SUCESSO ICONIC COM LOGO GEOAMBIENTE -->
                     <div class="space-y-6">
                         <h3 class="font-bold text-lg text-brand-accent uppercase tracking-wider border-b border-slate-700/60 pb-2 flex items-center space-x-2">
                             <span>Case de Sucesso</span>
                         </h3>
 
-                        <!-- CASE ICONIC COM A URL ATUALIZADA DA LOGO -->
                         <div class="bg-brand-dark p-6 rounded-2xl border border-slate-700/60 space-y-4">
                             <div class="flex justify-between items-center">
                                 <div class="bg-white p-2.5 rounded-xl flex items-center justify-center max-w-[160px]">
@@ -880,14 +906,24 @@
             </div>
         </section>
 
-        <!-- 7. SHOWCASE LIFECHAT -->
+        <!-- 7. SHOWCASE LIFECHAT (COM BOTÃO LIVE DEMO) -->
         <section id="show-lifechat" class="step-section hidden">
             <div class="bg-brand-card rounded-3xl border border-slate-700/50 shadow-2xl overflow-hidden">
-                <div class="p-6 border-b border-slate-700/60 flex justify-between items-center">
+                <div class="p-6 border-b border-slate-700/60 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <span class="text-brand-accent text-xs font-bold uppercase">Apresentação de Produto</span>
                         <h2 class="text-2xl font-bold text-white">LifeChat - Gestão de Atendimento e Comunicação Omnichannel</h2>
                     </div>
+
+                    <!-- BOTÃO 2: APLICAÇÃO LIVE DEMO LIFECHAT -->
+                    <a href="https://lifechat.lifeappsecommerce.com.br/" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-brand-accent border border-brand-accent/50 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center space-x-2 shadow-md hover:scale-105 transform">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-accent"></span>
+                        </span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <span>Acessar Aplicação Live Demo &rarr;</span>
+                    </a>
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-0">
@@ -1097,6 +1133,44 @@
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // ALTERNAR MODO APRESENTAÇÃO (FULLSCREEN TELA CHEIA)
+        function toggleFullscreen() {
+            const iconExpand = document.getElementById('icon-expand');
+            const iconCompress = document.getElementById('icon-compress');
+            const txtFullscreen = document.getElementById('txt-fullscreen');
+
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().then(() => {
+                    iconExpand.classList.add('hidden');
+                    iconCompress.classList.remove('hidden');
+                    txtFullscreen.innerText = "Sair da Apresentação";
+                }).catch(err => {
+                    alert(`Erro ao ativar tela cheia: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen().then(() => {
+                        iconExpand.classList.remove('hidden');
+                        iconCompress.classList.add('hidden');
+                        txtFullscreen.innerText = "Modo Apresentação";
+                    });
+                }
+            }
+        }
+
+        // ESCUTAR MUDANÇA DE TELA CHEIA VIA TECLADO (ESC)
+        document.addEventListener('fullscreenchange', () => {
+            const iconExpand = document.getElementById('icon-expand');
+            const iconCompress = document.getElementById('icon-compress');
+            const txtFullscreen = document.getElementById('txt-fullscreen');
+
+            if (!document.fullscreenElement) {
+                iconExpand.classList.remove('hidden');
+                iconCompress.classList.add('hidden');
+                txtFullscreen.innerText = "Modo Apresentação";
+            }
+        });
 
         // SALVAR FORMULÁRIOS E GERAR RESUMO DAS RESPOSTAS
         function salvarEAvancar(formId, nextStep) {
